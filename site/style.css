@@ -127,6 +127,43 @@ dialog::backdrop { background: #112a20a6; }
 .spoilers { margin-top: 9px; }
 .spoilers summary { cursor: pointer; font-size: 13px; font-weight: 750; margin-bottom: 6px; }
 .sources { padding-inline-start: 20px; margin: 5px 0 0; font-size: 13px; }
+.contribution > summary { cursor: pointer; color: var(--green); font-size: 15px; font-weight: 800; }
+.suggestion-content { margin-top: 10px; }
+.site-form { display: grid; gap: 11px; margin-top: 12px; }
+.site-form label { display: grid; gap: 4px; font-size: 13px; font-weight: 750; }
+.site-form label > .field-note { font-weight: 500; }
+.site-form input:not([type="checkbox"]), .site-form select, .site-form textarea {
+  width: 100%;
+  min-width: 0;
+  min-height: 39px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 7px 9px;
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+}
+.site-form textarea { resize: vertical; }
+.site-form fieldset { display: grid; min-width: 0; gap: 9px; margin: 0; padding: 8px 10px 11px; border: 1px solid var(--line); border-radius: 6px; }
+.site-form legend { padding: 0 4px; font-size: 12px; font-weight: 750; }
+.site-form .inline-check { display: flex; align-items: center; }
+.site-form input[type="checkbox"] { accent-color: var(--green); }
+.form-actions, .operator-toolbar { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+.primary { justify-self: start; min-height: 36px; padding: 6px 13px; border: 1px solid var(--green); border-radius: 6px; color: #fff; background: var(--green); font-weight: 750; font-size: 13px; }
+.primary:hover:not(:disabled) { background: var(--hero); }
+.primary:disabled, .secondary:disabled { opacity: .6; cursor: default; }
+.form-status { color: var(--green); font-size: 13px; font-weight: 650; }
+.form-status:empty, [data-captcha-status]:empty { display: none; }
+.operator { width: min(720px, calc(100% - 30px)); margin-block: 30px 48px; }
+.operator h1 { font-size: clamp(30px, 5vw, 47px); }
+.operator > .form-status { margin-top: 13px; }
+.operator-panel { margin-top: 17px; padding: 16px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+.operator-panel h2 { margin: 0; font-size: 22px; }
+.operator-toolbar { justify-content: space-between; margin-bottom: 9px; }
+.operator-item { border: 1px solid var(--line); border-radius: 7px; padding: 13px; margin-top: 11px; overflow-wrap: anywhere; }
+.operator-item > * + * { margin-top: 5px; }
+.operator-subject { color: var(--green); font-weight: 750; }
+.operator-note { white-space: pre-wrap; }
 @media (max-width: 790px) {
   .shell { width: calc(100% - 30px); }
   .hero { gap: 21px; }

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>제보 검토 | 소설 탐색실</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./backend-config.js" defer></script>
+  <script src="./backend.js" defer></script>
+  <script src="./admin.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="./" aria-label="소설 탐색실 홈"><span class="brand-mark" aria-hidden="true">文</span>소설 탐색실</a>
+      <a class="source-link" href="./">작품 목록으로</a>
+    </div>
+  </header>
+  <main class="shell operator">
+    <header class="section-head">
+      <div><p class="eyebrow section-kicker">운영자 전용</p><h1>제보 검토</h1></div>
+    </header>
+    <p id="operator-status" class="form-status" role="status"></p>
+    <section class="operator-panel" id="operator-login" aria-labelledby="operator-login-title" hidden>
+      <h2 id="operator-login-title">운영자 로그인</h2>
+      <form class="site-form" id="operator-auth">
+        <label>운영자 이메일<input name="email" type="email" autocomplete="email" required></label>
+        <button class="primary" type="submit">이메일로 로그인 링크 받기</button>
+      </form>
+    </section>
+    <section class="operator-panel" id="operator-queue" aria-labelledby="operator-queue-title" hidden>
+      <div class="operator-toolbar">
+        <h2 id="operator-queue-title" tabindex="-1">검토 대기</h2>
+        <div class="form-actions">
+          <button class="secondary" id="operator-refresh" type="button">새로고침</button>
+          <button class="secondary" id="operator-logout" type="button">로그아웃</button>
+        </div>
+      </div>
+      <p id="operator-count" class="field-note" aria-live="polite"></p>
+      <div id="operator-items"></div>
+    </section>
+  </main>
+</body>
+</html>

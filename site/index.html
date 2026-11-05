@@ -6,6 +6,9 @@
   <meta name="description" content="네이버 시리즈의 장르별 일간 TOP 100과 근거가 있는 작품·인물 정보를 한곳에서 탐색하세요.">
   <title>소설 탐색실 | 시리즈 TOP 100</title>
   <link rel="stylesheet" href="./style.css">
+  <script src="./backend-config.js" defer></script>
+  <script src="./backend.js" defer></script>
+  <script src="./suggestions.js" defer></script>
   <script src="./app.js" defer></script>
 </head>
 <body>
@@ -30,6 +33,7 @@
           <div><dt>상세 검토</dt><dd id="stat-research">—</dd></div>
         </dl>
         <p id="snapshot-date">공개 순위 불러오는 중</p>
+        <p id="data-source" role="status" hidden></p>
       </aside>
     </section>
     <section class="catalog" aria-labelledby="catalog-title">
@@ -73,7 +77,7 @@
       <a href="https://policy.naver.com/rules/service.html" target="_blank" rel="noopener noreferrer">네이버 이용약관 ↗</a>
     </details>
   </main>
-  <footer class="shell footer"><span>소설 탐색실</span><span>네이버 시리즈 공개 자료 기반 · 독립 탐색 도구</span></footer>
+  <footer class="shell footer"><span>소설 탐색실</span><span>네이버 시리즈 공개 자료 기반 · 독립 탐색 도구</span><a id="operator-link" href="./admin.html" hidden>제보 검토</a></footer>
   <dialog id="work-dialog" aria-labelledby="work-title">
     <div class="dialog-bar"><span class="eyebrow">작품 기록</span><form method="dialog"><button type="submit" class="secondary close" aria-label="작품 상세 닫기">닫기 <span aria-hidden="true">×</span></button></form></div>
     <div id="work-detail"></div>

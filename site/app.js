@@ -11,6 +11,7 @@ const genreSource = document.querySelector('#genre-source');
 const resultCount = document.querySelector('#result-count');
 const pageSize = 12;
 const originalRankUrl = genreSource.href;
+const backend = window.NovelBackend;
 let catalog;
 let works;
 let selectedGenre = 'all';
@@ -24,10 +25,14 @@ function escapeHtml(value) {
 
 function externalLink(value, label, className = '') {
   if (!value) return '';
-  const url = new URL(value);
-  if (url.protocol !== 'https:' || url.username || url.password) return '';
-  return '<a class="' + className + '" href="' + escapeHtml(url.href) +
-    '" target="_blank" rel="noopener noreferrer">' + escapeHtml(label) + ' <span aria-hidden="true">↗</span></a>';
+  try {
+    const url = new URL(value);
+    if (url.protocol !== 'https:' || url.username || url.password) return '';
+    return '<a class="' + className + '" href="' + escapeHtml(url.href) +
+      '" target="_blank" rel="noopener noreferrer">' + escapeHtml(label) + ' <span aria-hidden="true">↗</span></a>';
+  } catch {
+    return '';
+  }
 }
 
 function normalize(value) {
@@ -99,7 +104,7 @@ function row({ work, reason, unknown }) {
   const labels = work.research?.tags ?? [];
   const annotation = reason || labels.slice(0, 4).map((tag) => '#' + tag).join(' ');
   return '<article class="result">' +
-    '<span class="rank" aria-label="' + work.rank + '위">' + work.rank + '</span>' +
+    '<span class="rank" aria-label="' + escapeHtml(work.rank) + '위">' + escapeHtml(work.rank) + '</span>' +
     coverMarkup(work) +
     '<div><button class="result-title" type="button" data-work="' + work.index + '">' + escapeHtml(work.title) + '</button>' +
     '<p class="result-meta">' + escapeHtml(workMeta(work, selectedGenre === 'all')) + '</p>' +
@@ -144,7 +149,8 @@ function render() {
   const paginationLabel = pageCount > 1 ? ' · ' + page + ' / ' + pageCount + ' 페이지' : '';
   resultCount.textContent = (searchActive ? '일치 ' + (total - unknownCount) + '편' : '수록 ' + total + '편') +
     (unknownCount ? ' · 미확인 ' + unknownCount + '편' : '') + paginationLabel;
-  genreSource.href = genre?.url ?? originalRankUrl;
+  const rankUrl = genre?.url;
+  genreSource.href = typeof rankUrl === 'string' && rankUrl.startsWith('https://series.naver.com/') ? rankUrl : originalRankUrl;
 
   const removed = genre?.excludedRanks?.length ?? 0;
   let note = '';
@@ -182,10 +188,11 @@ function showDetail(work) {
   const summary = notes?.summary ? escapeHtml(notes.summary) : '확인한 줄거리 정보가 없습니다.';
   const heroine = notes?.heroine ?? (visible.some((person) => person.role === '히로인') ? '있음 확인' : '미확인');
   const harem = notes?.harem ?? '미확인';
-  const sources = notes?.sources?.map((source) => '<li>' + externalLink(source.url, source.label) + '</li>').join('') ?? '';
+  const sources = notes?.sources?.map((source) => externalLink(source.url, source.label))
+    .filter(Boolean).map((link) => '<li>' + link + '</li>').join('') ?? '';
   detail.innerHTML =
     '<header class="detail-heading">' + coverMarkup(work, true) + '<div>' +
-    '<span class="pill">' + escapeHtml(work.genre.name) + ' · ' + work.rank + '위 조회본</span>' +
+    '<span class="pill">' + escapeHtml(work.genre.name) + ' · ' + escapeHtml(work.rank) + '위 조회본</span>' +
     '<h2 class="work-title" id="work-title">' + escapeHtml(work.title) + '</h2>' +
     '<p class="detail-meta">' + escapeHtml(workMeta(work, false)) + '</p>' +
     '<div class="detail-actions">' + externalLink(work.url, '시리즈 작품 보기', 'source-link') +
@@ -202,7 +209,9 @@ function showDetail(work) {
     '<section class="detail-section"><h3>근거와 검토 범위</h3>' +
     (sources ? '<ul class="sources">' + sources + '</ul>' : '<p class="muted">해당 순위 조회본에서 제목과 기본 정보를 확인했습니다.</p>') +
     (notes?.notes ? '<p class="muted review-note">' + escapeHtml(notes.notes) + '</p>' : '') +
-    '</section>';
+    '</section>' +
+    '<details class="detail-section contribution"><summary>정보 제보</summary><div class="suggestion-content"></div></details>';
+  window.NovelSuggestions?.mount(detail.querySelector('.contribution'), work.id);
   dialog.showModal();
   dialog.scrollTop = 0;
 }
@@ -237,6 +246,26 @@ async function json(path) {
   return response.json();
 }
 
+async function loadCatalog() {
+  if (backend?.configured) {
+    document.querySelector('#operator-link').hidden = false;
+    try {
+      const live = await backend.loadCatalog();
+      if (!Array.isArray(live?.catalog?.genres) || !live.catalog.genres.length ||
+          live.catalog.genres.some((genre) => !Array.isArray(genre.entries)) ||
+          !live.research || typeof live.research !== 'object' || Array.isArray(live.research)) {
+        throw new Error('Invalid catalog response.');
+      }
+      return [live.catalog, live.research];
+    } catch {
+      const notice = document.querySelector('#data-source');
+      notice.textContent = '최신 검토 정보를 불러오지 못해 저장본을 표시합니다.';
+      notice.hidden = false;
+    }
+  }
+  return Promise.all([json('./catalog.json'), json('./research.json')]);
+}
+
 form.addEventListener('submit', (event) => event.preventDefault());
 document.addEventListener('error', (event) => {
   if (event.target instanceof HTMLImageElement && event.target.classList.contains('book-image')) event.target.hidden = true;
@@ -264,7 +293,7 @@ pagination.addEventListener('click', (event) => {
 });
 
 if (matchMedia('(max-width: 620px)').matches) document.querySelector('#filter-panel').open = false;
-Promise.all([json('./catalog.json'), json('./research.json')])
+loadCatalog()
   .then(([data, reviews]) => initialize(data, reviews))
   .catch(() => {
     resultsPanel.setAttribute('aria-busy', 'false');
