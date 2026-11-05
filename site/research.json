@@ -1,0 +1,1807 @@
+{
+  "3400123": {
+    "summary": "오랫동안 읽어 온 소설이 현실이 된다. 유일하게 결말을 아는 독자 김독자는 그 지식을 이용해 바뀐 세계에서 살아남으려 한다.",
+    "tags": [
+      "소설 현실화",
+      "생존물",
+      "아포칼립스",
+      "전략형 주인공"
+    ],
+    "characters": [
+      {
+        "name": "김독자",
+        "role": "주인공",
+        "traits": [
+          "소설의 결말을 아는 독자",
+          "전략적"
+        ]
+      },
+      {
+        "name": "유중혁",
+        "role": "작중 소설의 주인공",
+        "traits": []
+      },
+      {
+        "name": "유상아",
+        "role": "주요 여성 인물",
+        "traits": []
+      },
+      {
+        "name": "이지혜",
+        "role": "주요 여성 인물",
+        "traits": [
+          "검을 사용",
+          "여학생"
+        ]
+      },
+      {
+        "name": "이현성",
+        "role": "주요 인물",
+        "traits": [
+          "군인 출신"
+        ]
+      },
+      {
+        "name": "정희원",
+        "role": "주요 여성 인물",
+        "traits": []
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=3400123"
+      },
+      {
+        "label": "영화진흥위원회 · 원작과 각색 비교 대담",
+        "url": "https://magazine.kofic.or.kr/webzine/web2/2690/pdsView.do"
+      }
+    ],
+    "notes": "원작 인물과 영화의 각색 설정을 구분했습니다. 인물의 연애 관계는 확인 범위에 포함되지 않습니다."
+  },
+  "3713078": {
+    "summary": "황제가 다른 여성을 곁에 두고 황후의 자리를 위협하자, 나비에는 이웃 나라의 군주와 재혼할 길을 찾는다.",
+    "tags": [
+      "궁정",
+      "재혼",
+      "황실",
+      "이혼"
+    ],
+    "characters": [
+      {
+        "name": "나비에",
+        "role": "여주인공",
+        "traits": [
+          "황후"
+        ]
+      },
+      {
+        "name": "소비에슈",
+        "role": "주요 인물",
+        "traits": [
+          "황제",
+          "나비에의 배우자"
+        ]
+      },
+      {
+        "name": "라스타",
+        "role": "주요 인물",
+        "traits": [
+          "노예 출신",
+          "황제가 곁에 둔 인물"
+        ]
+      },
+      {
+        "name": "하인리",
+        "role": "주요 인물",
+        "traits": [
+          "이웃 나라 군주",
+          "나비에의 재혼 상대"
+        ],
+        "spoiler": true
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=3713078"
+      },
+      {
+        "label": "네이버웹툰 보도자료 · 각색판 인물 이름 대조",
+        "url": "https://webtoonscorp.com/ko/mediaDetail?seq=10034798"
+      }
+    ],
+    "notes": "기본 설정은 시리즈 원작 소개에서 확인했고 인물 이름 일부는 공식 각색판 자료와 대조했습니다."
+  },
+  "4130558": {
+    "summary": "천마와의 싸움을 끝낸 화산파 검수 청명이 약 백 년 뒤 어린 몸으로 깨어난다. 몰락한 화산파의 실상을 본 그는 문파를 다시 세우기로 한다.",
+    "tags": [
+      "환생",
+      "문파 재건",
+      "검술",
+      "화산파"
+    ],
+    "characters": [
+      {
+        "name": "청명",
+        "role": "주인공",
+        "traits": [
+          "매화검존",
+          "화산파 13대 제자",
+          "환생"
+        ]
+      },
+      {
+        "name": "천마",
+        "role": "과거의 적대자",
+        "traits": [
+          "청명이 전생에서 맞선 인물"
+        ]
+      },
+      {
+        "name": "당소소",
+        "role": "주요 여성 인물",
+        "traits": [
+          "사천당가 출신"
+        ],
+        "spoiler": true
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=4130558"
+      },
+      {
+        "label": "서강대학교 학위논문 · 당소소와 독자 반응 연구",
+        "url": "https://dcollection.sogang.ac.kr/dcollection/public_resource/pdf/000000077266_20260115113950.pdf"
+      }
+    ],
+    "notes": "공개 댓글 일부는 청명의 변화와 문파를 다시 세우는 주제에 주목합니다. 당소소와 청명의 관계를 둘러싼 독자 해석은 학위논문에서 별도로 다룹니다."
+  },
+  "4429337": {
+    "summary": "아르비스의 주인 마티어스는 레일라를 곁에 두기 위해 통제하려 한다. 그 집착이 두 사람의 삶을 뒤흔든다.",
+    "tags": [
+      "집착",
+      "권력 격차",
+      "귀족"
+    ],
+    "characters": [
+      {
+        "name": "레일라 르웰린",
+        "role": "여주인공",
+        "traits": []
+      },
+      {
+        "name": "마티어스 폰 헤르하르트",
+        "role": "주요 인물",
+        "traits": [
+          "아르비스의 주인",
+          "집착"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=4429337"
+      }
+    ]
+  },
+  "4892207": {
+    "summary": "무공에 집착하던 광마 이자하가 사람들에게 무시받던 객잔 점소이 시절로 돌아간다.",
+    "tags": [
+      "회귀",
+      "점소이",
+      "무공"
+    ],
+    "characters": [
+      {
+        "name": "이자하",
+        "role": "주인공",
+        "traits": [
+          "광마",
+          "점소이",
+          "무공에 집착"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=4892207"
+      }
+    ]
+  },
+  "5206283": {
+    "summary": "게임 속 탑이 현실에 나타난 뒤, 게임을 끝까지 공략했던 강진혁이 이전 경험을 살려 시련의 탑을 오른다.",
+    "tags": [
+      "탑 등반",
+      "게임 현실화",
+      "공략 지식",
+      "성장물"
+    ],
+    "characters": [
+      {
+        "name": "강진혁",
+        "role": "주인공",
+        "traits": [
+          "탑 공략",
+          "게임 최초 정복자"
+        ]
+      },
+      {
+        "name": "테레사 드 로렌시아",
+        "role": "주요 여성 인물",
+        "traits": [
+          "성녀",
+          "파란 눈"
+        ]
+      },
+      {
+        "name": "엘리스 폰 아타락시아",
+        "role": "주요 여성 인물",
+        "traits": [
+          "강진혁의 협력자"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=5206283"
+      },
+      {
+        "label": "컴투스 · 웹툰 협업 인물 소개",
+        "url": "https://on.com2us.com/content/soulstrike_collaboration3/"
+      },
+      {
+        "label": "외부 독자 리뷰",
+        "url": "https://bsy3201.tistory.com/27"
+      }
+    ],
+    "notes": "인물 세부 설정은 공식 웹툰 협업 자료 기준입니다. 외부 리뷰 한 건에서는 갈등을 빠르게 해결하는 전개를 긍정적으로 평가했습니다."
+  },
+  "5896155": {
+    "summary": "타고난 무공 재능과 달리 오래 살기 어려운 체질의 인물이 생존을 위해 몸을 고칠 방법을 찾는다.",
+    "tags": [
+      "무공 천재",
+      "시한부",
+      "생존물"
+    ],
+    "characters": [
+      {
+        "name": "정연신",
+        "role": "주인공",
+        "traits": [
+          "무공 천재",
+          "단명할 체질"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=5896155"
+      },
+      {
+        "label": "네이버웹툰 · 공식 각색 소개",
+        "url": "https://m.comic.naver.com/webtoon/list?titleId=832703"
+      }
+    ]
+  },
+  "6037518": {
+    "summary": "컴퓨터로도 공략하지 못했던 게임 속에 들어간 인물이 바바리안으로 살아남아야 한다. 게임을 끝낼 수 없으면 그 세계에 머물러야 할 수도 있다.",
+    "tags": [
+      "게임 빙의",
+      "생존물",
+      "바바리안"
+    ],
+    "characters": [
+      {
+        "name": "비요른 얀델",
+        "role": "주인공",
+        "traits": [
+          "바바리안",
+          "플레이어가 빙의한 몸"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=6037518"
+      },
+      {
+        "label": "네이버웹툰 · 공식 각색 소개",
+        "url": "https://m.comic.naver.com/webtoon/list?titleId=808482"
+      }
+    ]
+  },
+  "6809787": {
+    "summary": "겸살귀 정은 자신과 외모가 닮은 연목검장의 셋째공자 목경운을 대신해 살아간다. 새 신분을 지키기 위해 검장 내부의 위험을 넘어서야 한다.",
+    "tags": [
+      "대역",
+      "신분 위장",
+      "검장"
+    ],
+    "characters": [
+      {
+        "name": "정",
+        "role": "주인공",
+        "traits": [
+          "겸살귀",
+          "목경운의 대역"
+        ]
+      },
+      {
+        "name": "목경운",
+        "role": "주요 인물",
+        "traits": [
+          "연목검장의 셋째공자"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=6809787"
+      },
+      {
+        "label": "네이버웹툰 · 공식 각색 소개",
+        "url": "https://m.comic.naver.com/webtoon/list?titleId=821597"
+      }
+    ]
+  },
+  "8486501": {
+    "summary": "기억력이 뛰어난 삼류무사 진소운이 마교가 재림하기 전으로 30년을 돌아간다. 부족한 무공 재능과 작은 문파라는 출발점은 여전하다.",
+    "tags": [
+      "회귀",
+      "마교",
+      "삼류 문파"
+    ],
+    "characters": [
+      {
+        "name": "진소운",
+        "role": "주인공",
+        "traits": [
+          "삼류무사",
+          "뛰어난 기억력",
+          "30년 전으로 회귀"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=8486501"
+      }
+    ]
+  },
+  "8522891": {
+    "summary": "소설 속 악역으로 들어간 인물은 장차 자신을 죽이게 될 남편과의 이혼을 준비한다. 그때까지 가난한 공작가의 형편부터 개선하기로 한다.",
+    "tags": [
+      "빙의",
+      "육성",
+      "가문 재건",
+      "이혼 계획"
+    ],
+    "characters": [],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=8522891"
+      }
+    ]
+  },
+  "8981942": {
+    "summary": "가족과 친구를 잃은 검무극이 현재에서 이룰 수 없었던 복수를 위해 과거로 돌아간다.",
+    "tags": [
+      "회귀",
+      "복수"
+    ],
+    "characters": [
+      {
+        "name": "검무극",
+        "role": "주인공",
+        "traits": [
+          "회귀",
+          "복수"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=8981942"
+      },
+      {
+        "label": "네이버웹툰 · 공식 각색 소개",
+        "url": "https://comic.naver.com/webtoon/list?titleId=828715"
+      }
+    ],
+    "notes": "검무극의 이름과 회귀의 배경은 공식 웹툰 각색 소개에서도 확인됩니다."
+  },
+  "9378942": {
+    "summary": "같은 하루가 되풀이되는 상황에서도 기사가 되기를 꿈꾸던 인물이 포기하지 않고 기술을 익힌다.",
+    "tags": [
+      "하루 반복",
+      "타임루프",
+      "기사",
+      "성장물"
+    ],
+    "characters": [
+      {
+        "name": "엔크리드",
+        "role": "주인공",
+        "traits": [
+          "기사를 꿈꾸는 인물",
+          "하루 반복"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=9378942"
+      },
+      {
+        "label": "네이버웹툰 · 공식 각색 소개",
+        "url": "https://m.comic.naver.com/webtoon/list?titleId=824543"
+      }
+    ]
+  },
+  "9413632": {
+    "summary": "첫 삶에서 아이를 남기고 죽은 여성이 과거로 돌아온다. 전남편과 다시 결혼하려는 이유는 아이를 다시 만나기 위해서다.",
+    "tags": [
+      "회귀",
+      "재결합",
+      "가족",
+      "육아"
+    ],
+    "characters": [],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=9413632"
+      }
+    ]
+  },
+  "9735999": {
+    "summary": "하녀 루시엔은 만날 때마다 다른 신분을 드러내는 남자를 만난다. 남자의 행동을 보면서 그가 사제나 허약한 귀족으로만 설명될 인물이 아님을 깨닫는다.",
+    "tags": [
+      "신분 위장",
+      "하녀",
+      "미스터리"
+    ],
+    "characters": [
+      {
+        "name": "루시엔",
+        "role": "여주인공",
+        "traits": [
+          "하녀"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=9735999"
+      }
+    ]
+  },
+  "9807283": {
+    "summary": "일곱 사람이 신선들의 세계에 떨어진다. 능력이 없는 줄 알았던 서은현은 끝없이 회귀할 수 있다는 사실을 알고, 그 반복에서 벗어날 방법을 찾는다.",
+    "tags": [
+      "선협",
+      "이세계",
+      "무한 회귀",
+      "타임루프"
+    ],
+    "characters": [
+      {
+        "name": "서은현",
+        "role": "주인공",
+        "traits": [
+          "무한 회귀"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=9807283"
+      }
+    ]
+  },
+  "10673177": {
+    "summary": "어머니를 잃은 에디스가 자신을 몰아붙인 이들에게 맞설 기회를 찾는다. 평판 좋은 마이어스 공작과의 결혼이 그 계기가 된다.",
+    "tags": [
+      "복수",
+      "공작",
+      "결혼"
+    ],
+    "characters": [
+      {
+        "name": "에디스",
+        "role": "여주인공",
+        "traits": []
+      },
+      {
+        "name": "마이어스 공작",
+        "role": "주요 인물",
+        "traits": [
+          "공작"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=10673177"
+      }
+    ]
+  },
+  "11008859": {
+    "summary": "정보국 마법사 갈라하드는 정치적인 이유로 북부 대공의 데릴사위가 된다. 그는 마나를 태우는 소드마스터인 대공녀의 마음을 얻으려 한다.",
+    "tags": [
+      "북부 대공",
+      "마법사",
+      "소드마스터",
+      "정략혼"
+    ],
+    "characters": [
+      {
+        "name": "갈라하드",
+        "role": "주인공",
+        "traits": [
+          "정보국 요원",
+          "마법사"
+        ]
+      },
+      {
+        "name": "북부 대공녀",
+        "role": "히로인",
+        "traits": [
+          "소드마스터",
+          "냉담함",
+          "갈라하드의 상대역"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=11008859"
+      },
+      {
+        "label": "네이버웹툰 · 공식 각색 소개",
+        "url": "https://m.comic.naver.com/webtoon/list?titleId=855360"
+      }
+    ],
+    "notes": "인물 관계는 원작을 바탕으로 한 공식 웹툰 소개에서 확인했습니다. 검색에 노출된 시리즈 댓글 중에는 동료들의 과장된 개성과 익살을 즐기는 반응이 있습니다."
+  },
+  "11181715": {
+    "summary": "희귀병으로 죽어가던 월스트리트 투자자 하시헌이 신입사원 시절로 돌아간다. 자신의 병을 치료할 신약을 개발하기 위해 다시 자금을 모으려 한다.",
+    "tags": [
+      "투자",
+      "월스트리트",
+      "회귀",
+      "시한부",
+      "전문직물"
+    ],
+    "characters": [
+      {
+        "name": "하시헌",
+        "role": "주인공",
+        "traits": [
+          "투자자",
+          "희귀병",
+          "과거로 회귀"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=11181715"
+      },
+      {
+        "label": "네이버 시리즈 · 공식 만화 각색 소개",
+        "url": "https://series.naver.com/comic/top100List.series?categoryCode=ALL&page=2&rankingTypeCode=DAILY"
+      }
+    ]
+  },
+  "11227324": {
+    "summary": "위험을 피하고 안전을 중시하는 소시민이 탑에 오른다. 주인공의 신중한 성향이 공식 소개에서 전면에 드러난다.",
+    "tags": [
+      "탑 등반",
+      "소시민형 주인공",
+      "신중함"
+    ],
+    "characters": [
+      {
+        "name": "봉주혁",
+        "role": "주인공",
+        "traits": [
+          "소시민형",
+          "신중함",
+          "안전 우선"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=11227324"
+      },
+      {
+        "label": "네이버웹툰 · 공식 각색 소개",
+        "url": "https://m.comic.naver.com/webtoon/list?titleId=845508"
+      }
+    ],
+    "notes": "주인공 이름은 공식 각색 소개에서 확인했습니다. 검색에 노출된 시리즈 댓글 중 한 반응은 첫 화에서 주인공의 행동이 성향과 어긋나 진입장벽이 됐다고 평했습니다."
+  },
+  "11266694": {
+    "summary": "게임 속 귀족이 된 알론은 미래의 악당들에게 죽을 운명을 피하기 위해 어린 악당들을 후원한다. 그 선택으로 왕국의 숨은 실세라는 뜻밖의 평가를 받는다.",
+    "tags": [
+      "게임 빙의",
+      "후원",
+      "악당 교화",
+      "흑막 오해"
+    ],
+    "characters": [
+      {
+        "name": "알론",
+        "role": "주인공",
+        "traits": [
+          "게임 속 귀족에 빙의",
+          "악당들의 후원자"
+        ]
+      },
+      {
+        "name": "다섯 죄악",
+        "role": "주요 인물 집단",
+        "traits": [
+          "알론이 후원하는 인물들"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=11266694"
+      },
+      {
+        "label": "네이버웹툰 · 공식 각색 소개",
+        "url": "https://comic.naver.com/webtoon/list?tab=fri&titleId=844063"
+      }
+    ],
+    "notes": "검색 결과에 노출된 일부 공개 댓글에서는 알론과 엘리반의 관계 및 능력을 두고 독자의 추측이 보입니다. 추측은 작품 태그나 인물 설정에 반영하지 않았습니다."
+  },
+  "11289082": {
+    "summary": "검귀 천휘는 과거로 돌아가 비극이 벌어지기 전에 사천당가의 막내딸 당소월을 찾는다.",
+    "tags": [
+      "사천당가",
+      "회귀",
+      "복수"
+    ],
+    "characters": [
+      {
+        "name": "천휘",
+        "role": "주인공",
+        "traits": [
+          "검귀",
+          "회귀"
+        ]
+      },
+      {
+        "name": "당소월",
+        "role": "주요 여성 인물",
+        "traits": [
+          "사천당가",
+          "막내딸",
+          "독무후",
+          "천휘와 깊은 관계"
+        ]
+      },
+      {
+        "name": "천마",
+        "role": "적대 인물",
+        "traits": []
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=11289082"
+      },
+      {
+        "label": "네이버 시리즈 · 공식 웹툰 각색 소개",
+        "url": "https://series.naver.com/comic/detail.series?productNo=14425075"
+      },
+      {
+        "label": "외부 독자 리뷰 · 30화 감상",
+        "url": "https://gall.dcinside.com/mgallery/board/view/?id=genrenovel&no=9671020"
+      }
+    ],
+    "notes": "인물은 공식 각색 소개 기준입니다. 외부 독자 한 명은 검술 묘사와 정사파 설정을 호평했습니다. 후반 로맨스 구조는 추가 확인이 필요합니다."
+  },
+  "11397259": {
+    "summary": "낯선 야생에 떨어진 인물은 온라인 게시판을 통해 도움을 구한다. 게시판의 이용자들이 수상해 이들의 조언을 어디까지 믿을지가 관건이다.",
+    "tags": [
+      "생존물",
+      "갤러리",
+      "야생"
+    ],
+    "characters": [],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=11397259"
+      }
+    ]
+  },
+  "11878938": {
+    "summary": "평생 그림자처럼 지낸 살수가 다시 얻은 기회를 이용해 이번에는 직접 교주가 되기로 한다.",
+    "tags": [
+      "회귀",
+      "살수",
+      "교주"
+    ],
+    "characters": [],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=11878938"
+      }
+    ]
+  },
+  "12060794": {
+    "summary": "한국의 동물 생태학자가 소설 속 병약한 왕자 니키엘의 몸에서 깨어난다. 곧 배우자를 고르라는 요구를 받는데, 실제 사건은 자신이 알던 원작과 조금씩 다르다.",
+    "tags": [
+      "빙의",
+      "이세계",
+      "왕자",
+      "구혼"
+    ],
+    "characters": [
+      {
+        "name": "니키엘",
+        "role": "주인공",
+        "traits": [
+          "병약한 왕자",
+          "빙의 전 동물 생태학자"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=12060794"
+      }
+    ]
+  },
+  "12272456": {
+    "summary": "한 모험가가 지하 깊은 곳으로 들어가 보물을 찾아다닌다.",
+    "tags": [
+      "지하 탐험",
+      "모험물",
+      "보물 찾기"
+    ],
+    "characters": [],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=12272456"
+      }
+    ]
+  },
+  "12449577": {
+    "summary": "무신들이 머무는 객잔에서 점소이로 지내는 인물을 중심으로 이야기가 시작된다.",
+    "tags": [
+      "객잔",
+      "점소이",
+      "무신"
+    ],
+    "characters": [],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=12449577"
+      }
+    ]
+  },
+  "12557396": {
+    "summary": "부하를 구하다 사망한 특수부대 중사 윤서이는 에스텔라의 몸에서 깨어난다. 전생의 무기 지식을 활용해 마물이 출몰하는 윈트폴의 군사력을 키우려 한다.",
+    "tags": [
+      "빙의",
+      "이세계",
+      "특수부대",
+      "무기 개발",
+      "영지 경영"
+    ],
+    "characters": [
+      {
+        "name": "윤서이",
+        "role": "여주인공",
+        "traits": [
+          "특수부대 중사",
+          "무기 전문가"
+        ]
+      },
+      {
+        "name": "에스텔라",
+        "role": "주요 인물",
+        "traits": [
+          "윈트폴 영주 가문의 딸",
+          "윤서이가 깨어난 몸의 원래 주인"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=12557396"
+      }
+    ]
+  },
+  "12946697": {
+    "summary": "백엔드 개발자 단비는 새로 부임한 개발팀장 한해일의 얼굴을 알아본다. 예상하지 못한 재회가 익숙한 직장 생활을 흔든다.",
+    "tags": [
+      "오피스 로맨스",
+      "재회",
+      "개발자",
+      "전문직물"
+    ],
+    "characters": [
+      {
+        "name": "단비",
+        "role": "여주인공",
+        "traits": [
+          "백엔드 개발자"
+        ]
+      },
+      {
+        "name": "한해일",
+        "role": "주요 인물",
+        "traits": [
+          "개발팀 팀장"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=12946697"
+      }
+    ]
+  },
+  "13421289": {
+    "summary": "비범한 지성을 얻은 인물이 현대 대한민국에 등장한다.",
+    "tags": [
+      "천재",
+      "현대 한국"
+    ],
+    "characters": [],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=13421289"
+      }
+    ]
+  },
+  "13572108": {
+    "summary": "호원그룹 직원 은호가 자신을 보호해 주겠다는 성지훈 전무와 기간과 보수를 정해 결혼한다. 두 사람은 결혼 직후 집안의 반발에 부딪힌다.",
+    "tags": [
+      "계약결혼",
+      "재벌가",
+      "시가 갈등"
+    ],
+    "characters": [
+      {
+        "name": "은호",
+        "role": "여주인공",
+        "traits": [
+          "호원그룹 직원"
+        ]
+      },
+      {
+        "name": "성지훈",
+        "role": "남주인공",
+        "traits": [
+          "호원그룹 전무",
+          "다정함"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=13572108"
+      }
+    ]
+  },
+  "13742675": {
+    "summary": "건설사를 장악한 도헌일과 은수는 조직의 결속을 위해 결혼한다. 은수는 건설사 전무라는 직함 뒤에 있는 그의 폭력적인 세계를 경계한다.",
+    "tags": [
+      "정략결혼",
+      "조직물",
+      "기업"
+    ],
+    "characters": [
+      {
+        "name": "은수",
+        "role": "여주인공",
+        "traits": []
+      },
+      {
+        "name": "도헌일",
+        "role": "주요 인물",
+        "traits": [
+          "SD건설 전무",
+          "조직과 연관"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=13742675"
+      }
+    ]
+  },
+  "14041321": {
+    "summary": "즉사기를 지닌 인물이 무림에 떨어져 예측하기 어려운 강호 사람들과 얽힌다.",
+    "tags": [
+      "무림",
+      "즉사기"
+    ],
+    "characters": [],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=14041321"
+      }
+    ]
+  },
+  "14070082": {
+    "summary": "무명은 은인에게 보답하기 위해 도박장에 있던 은인의 아들 유성을 데려온다. 트로트에 재능 있는 유성은 가수가 되고 싶어 한다.",
+    "tags": [
+      "트로트",
+      "연예계",
+      "후원"
+    ],
+    "characters": [
+      {
+        "name": "무명",
+        "role": "주요 인물",
+        "traits": [
+          "유성을 후원"
+        ]
+      },
+      {
+        "name": "유성",
+        "role": "주요 인물",
+        "traits": [
+          "트로트 신동",
+          "가수 지망"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공개 순위 소개",
+        "url": "https://series.naver.com/novel/top100List.series?categoryCode=209&rankingTypeCode=DAILY"
+      }
+    ],
+    "notes": "시리즈 공개 순위의 소개에서 확인한 내용입니다."
+  },
+  "14188540": {
+    "summary": "거리의 광대가 의원 밑에서 배우며 독과 치료의 세계에 발을 들인다.",
+    "tags": [
+      "의원",
+      "독",
+      "사제 관계"
+    ],
+    "characters": [],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=14188540"
+      },
+      {
+        "label": "무툰 · 공개 독자 감상",
+        "url": "https://www.mootoon.co.kr/lbbs/coment/?tcode=86kd&ty=S"
+      }
+    ],
+    "notes": "공개 감상 첫 페이지에는 전개를 호평한 반응과 무난하다는 반응이 함께 있습니다."
+  },
+  "14239265": {
+    "summary": "가문에서 내쳐진 로제타는 괴물로 알려진 대공과 결혼한다. 새 영지에서 마주한 남편과 주민들은 소문과 달랐고, 로제타는 그곳을 새 출발의 기회로 삼는다.",
+    "tags": [
+      "정략결혼",
+      "대공",
+      "영지",
+      "가족 갈등"
+    ],
+    "characters": [
+      {
+        "name": "로제타",
+        "role": "여주인공",
+        "traits": [
+          "대공비"
+        ]
+      },
+      {
+        "name": "괴물 대공",
+        "role": "주요 인물",
+        "traits": [
+          "대공",
+          "로제타의 남편"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=14239265"
+      }
+    ]
+  },
+  "14241999": {
+    "summary": "주사위가 운명을 좌우하는 세계에서 다크엘프가 직접 주사위를 굴린다.",
+    "tags": [
+      "다크엘프",
+      "주사위",
+      "운명"
+    ],
+    "characters": [],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=14241999"
+      }
+    ]
+  },
+  "14318681": {
+    "summary": "친구의 소개로 사연을 읽는 방송을 시작한 인물에게 첫 방송부터 신기가 나타난다.",
+    "tags": [
+      "인터넷 방송",
+      "신점",
+      "능력 각성"
+    ],
+    "characters": [],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=14318681"
+      }
+    ]
+  },
+  "14370052": {
+    "summary": "사망한 한국인 관상가가 미국의 노숙자 몸에서 깨어난다. 생계 때문에 시작한 저렴한 관상 풀이가 미국 유력 인사들의 관심을 끈다.",
+    "tags": [
+      "빙의",
+      "관상",
+      "미국",
+      "생계형 주인공"
+    ],
+    "characters": [],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=14370052"
+      }
+    ]
+  },
+  "14386745": {
+    "summary": "고난도 게임의 숨은 결말을 보려던 공략 플레이어가 스스로 만든 전사 캐릭터의 몸에서 깨어난다. 이 캐릭터는 마나가 없고 체력이 10%에 불과하다.",
+    "tags": [
+      "게임 빙의",
+      "전사",
+      "숨은 결말",
+      "게임 시스템"
+    ],
+    "characters": [],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=14386745"
+      }
+    ]
+  },
+  "14425077": {
+    "summary": "죽을 고비를 넘긴 농노 소년에게 체력과 검술의 성장을 보여주는 수치가 나타난다. 소년은 신분의 굴레에서 벗어나기 위해 검술을 익힌다.",
+    "tags": [
+      "성장물",
+      "검술",
+      "시스템",
+      "신분 상승"
+    ],
+    "characters": [],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=14425077"
+      }
+    ]
+  },
+  "14443911": {
+    "summary": "소국 공주 사이는 가한의 새 황제 훤에게 보내져 혼례를 올린다. 전쟁터의 악명으로 알려진 황제 아래에서 사이는 돌아갈 곳이 없다.",
+    "tags": [
+      "시대물",
+      "황실",
+      "정략결혼"
+    ],
+    "characters": [
+      {
+        "name": "사이",
+        "role": "여주인공",
+        "traits": [
+          "소국의 공주"
+        ]
+      },
+      {
+        "name": "훤",
+        "role": "주요 인물",
+        "traits": [
+          "가한의 황제",
+          "전쟁에서 악명이 높음"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공개 순위 소개",
+        "url": "https://series.naver.com/novel/top100List.series?categoryCode=201&rankingTypeCode=DAILY"
+      }
+    ],
+    "notes": "시리즈 공개 순위의 소개에서 확인한 내용입니다."
+  },
+  "14449546": {
+    "summary": "여동생을 위해 일방적인 희생을 강요받던 나딘은 낯선 남자의 말을 계기로 자신의 몫을 되찾고 복수하기로 결심한다.",
+    "tags": [
+      "가족 갈등",
+      "복수",
+      "자기 구원"
+    ],
+    "characters": [
+      {
+        "name": "나딘",
+        "role": "여주인공",
+        "traits": [
+          "가족의 희생을 강요받음"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=14449546"
+      }
+    ]
+  },
+  "14519597": {
+    "summary": "정식으로 축구를 배운 적 없는 인물이 선수들의 조언 요청을 받으며 축구계에 관여하게 된다.",
+    "tags": [
+      "스포츠",
+      "축구",
+      "선수 조언",
+      "시스템"
+    ],
+    "characters": [],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=14519597"
+      },
+      {
+        "label": "문피아 · 공식 태그",
+        "url": "https://www.munpia.com/novel/detail/556620"
+      }
+    ],
+    "notes": "검색에 노출된 시리즈 BEST 댓글 표본에는 진행이 빠르고 축구를 몰라도 이해하기 쉽다는 평과 전개가 비슷하게 반복된다는 평이 함께 있습니다."
+  },
+  "14567853": {
+    "summary": "오메가버스 세계에서 깨어난 인물이 자신이 베타라는 사실과 알파·오메가가 존재하는 사회의 규칙을 알게 된다.",
+    "tags": [
+      "오메가버스",
+      "빙의",
+      "베타"
+    ],
+    "characters": [
+      {
+        "name": "권윤성",
+        "role": "등장인물",
+        "traits": []
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공개 순위 소개",
+        "url": "https://series.naver.com/novel/top100List.series?categoryCode=207&rankingTypeCode=DAILY"
+      }
+    ],
+    "notes": "시리즈 공개 순위의 소개에서 확인한 내용입니다."
+  },
+  "14592437": {
+    "summary": "자수성가한 대표 신영서는 물에 빠져 죽음을 맞은 뒤, 결혼한 기억이 없는데도 배우자라고 주장하는 남자와 마주한다.",
+    "tags": [
+      "결혼",
+      "이혼",
+      "자수성가"
+    ],
+    "characters": [
+      {
+        "name": "신영서",
+        "role": "여주인공",
+        "traits": [
+          "기업 대표"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공개 순위 소개",
+        "url": "https://series.naver.com/novel/top100List.series?categoryCode=201&rankingTypeCode=DAILY"
+      }
+    ],
+    "notes": "시리즈 공개 순위의 소개에서 확인한 내용입니다."
+  },
+  "14636619": {
+    "summary": "채권추심을 하던 유한은 자신의 일에 앙심을 품은 채무자에게 동생을 잃는다. 일을 그만두고 나서도 어머니의 병원비를 마련하려 빌린 돈을 갚아야 한다.",
+    "tags": [
+      "범죄",
+      "채무",
+      "가족 상실"
+    ],
+    "characters": [
+      {
+        "name": "유한",
+        "role": "주인공",
+        "traits": [
+          "전직 채권추심원"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공개 순위 소개",
+        "url": "https://series.naver.com/novel/top100List.series?categoryCode=209&rankingTypeCode=DAILY"
+      }
+    ],
+    "notes": "시리즈 공개 순위의 소개에서 확인한 내용입니다."
+  },
+  "14646459": {
+    "summary": "한때 아이돌이었던 성지온은 실용음악 입시 강사가 되었다. 과거의 공개 연애 사건이 현재의 이야기와 맞물린다.",
+    "tags": [
+      "아이돌물",
+      "연예계",
+      "입시 강사"
+    ],
+    "characters": [
+      {
+        "name": "성지온",
+        "role": "주요 인물",
+        "traits": [
+          "전직 아이돌",
+          "실용음악 입시 강사"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공개 순위 소개",
+        "url": "https://series.naver.com/novel/top100List.series?categoryCode=209&rankingTypeCode=DAILY"
+      }
+    ],
+    "notes": "연령 제한 상세 페이지 대신 시리즈 공개 순위 소개에서 확인했습니다."
+  },
+  "14717817": {
+    "summary": "수선 재능이 낮은 고안은 영초에서 얻은 수명을 공법이나 재능에 투자할 수 있다. 남들이 꺼리는 약초밭에서 눈에 띄지 않게 실력을 키운다.",
+    "tags": [
+      "선협",
+      "약초",
+      "수명 투자",
+      "힘 숨김"
+    ],
+    "characters": [
+      {
+        "name": "고안",
+        "role": "주인공",
+        "traits": [
+          "오영근",
+          "영초의 수명을 얻음",
+          "힘 숨김"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=14717817"
+      }
+    ]
+  },
+  "14732364": {
+    "summary": "등반대에서 내쫓긴 D등급 헌터 김태성 앞에 다른 차원의 남궁철이 소환된다. 무림과 연결된 사건이 김태성의 반전 기회가 된다.",
+    "tags": [
+      "헌터물",
+      "무림",
+      "차원 소환",
+      "등반대"
+    ],
+    "characters": [
+      {
+        "name": "김태성",
+        "role": "주인공",
+        "traits": [
+          "D등급 헌터"
+        ]
+      },
+      {
+        "name": "남궁철",
+        "role": "주요 인물",
+        "traits": [
+          "다른 차원에서 소환됨"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=14732364"
+      }
+    ]
+  },
+  "14738001": {
+    "summary": "하북 천향루의 점소이 이갑생이 객잔에서 벌어진 일을 추리하다 강호에 숨겨진 비밀을 마주한다.",
+    "tags": [
+      "추리",
+      "무림",
+      "객잔"
+    ],
+    "characters": [
+      {
+        "name": "이갑생",
+        "role": "주인공",
+        "traits": [
+          "천향루 점소이",
+          "추리"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=14738001"
+      }
+    ]
+  },
+  "14813102": {
+    "summary": "카림은 이블린에게 국경에 도착할 때까지 마음이 바뀌지 않으면 라이언에게 돌려보내겠다고 약속한다. 세 인물의 관계가 이 내기에 걸려 있다.",
+    "tags": [
+      "내기",
+      "관계 갈등"
+    ],
+    "characters": [
+      {
+        "name": "이블린",
+        "role": "주요 인물",
+        "traits": []
+      },
+      {
+        "name": "카림",
+        "role": "주요 인물",
+        "traits": [
+          "흑발"
+        ]
+      },
+      {
+        "name": "라이언",
+        "role": "등장인물",
+        "traits": []
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=14813102"
+      }
+    ]
+  },
+  "14830072": {
+    "summary": "소설 속 악역 외숙모에 빙의한 강지가 반란을 피해 가족들을 이끌고 산으로 들어간다. 현대의 약학 지식과 시골에서 익힌 생활 기술이 생존의 밑천이다.",
+    "tags": [
+      "빙의",
+      "피난",
+      "가족 생존",
+      "약학",
+      "개간"
+    ],
+    "characters": [
+      {
+        "name": "강지",
+        "role": "여주인공",
+        "traits": [
+          "약학 전공",
+          "악역 외숙모에 빙의"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=14830072"
+      }
+    ]
+  },
+  "14861068": {
+    "summary": "전남편 류태헌이 6년 만에 유현 앞에 돌아온다. 차갑게 굴던 태헌은 유현을 닮은 아이를 만난 뒤 당혹감을 감추지 못한다.",
+    "tags": [
+      "재회",
+      "전 배우자",
+      "육아"
+    ],
+    "characters": [
+      {
+        "name": "유현",
+        "role": "여주인공",
+        "traits": []
+      },
+      {
+        "name": "류태헌",
+        "role": "주요 인물",
+        "traits": [
+          "유현의 전남편",
+          "냉정한 인상"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=14861068"
+      }
+    ]
+  },
+  "14871523": {
+    "summary": "오래 병석에 있던 S급 가이드 유도아가 무협 세계에서 신선 청허를 만난다. 도아는 그곳의 가이드로 사는 조건으로 새 삶을 제안받는다.",
+    "tags": [
+      "가이드버스",
+      "무림",
+      "이세계",
+      "환골탈태"
+    ],
+    "characters": [
+      {
+        "name": "유도아",
+        "role": "여주인공",
+        "traits": [
+          "S급 가이드"
+        ]
+      },
+      {
+        "name": "청허",
+        "role": "주요 인물",
+        "traits": [
+          "신선"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공개 순위 소개",
+        "url": "https://series.naver.com/novel/top100List.series?categoryCode=207&rankingTypeCode=DAILY"
+      }
+    ],
+    "notes": "시리즈 공개 순위의 소개에서 확인한 내용입니다."
+  },
+  "14875976": {
+    "summary": "미국 시골에서 일하는 영양사가 아이들에게 한식을 만들어 준다. 입소문이 퍼지자 여러 학교가 영양사를 찾는다.",
+    "tags": [
+      "전문직물",
+      "영양사",
+      "한식",
+      "미국 시골"
+    ],
+    "characters": [],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=14875976"
+      }
+    ]
+  },
+  "14886050": {
+    "summary": "119구급대원이 현장에서 화재 진압과 구조, 응급 환자 이송에 관여하는 소방 이야기다.",
+    "tags": [
+      "전문직물",
+      "소방",
+      "응급구조",
+      "구급대원"
+    ],
+    "characters": [],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=14886050"
+      }
+    ],
+    "notes": "공개 작품 소개에서 확인한 범위입니다. 검색에 노출된 시리즈 댓글 일부는 현실의 구급차 사이렌과 현장 대응 환경을 언급합니다."
+  },
+  "14889691": {
+    "summary": "태성의 후계자 한재헌은 외모를 꾸미는 데 관심이 없어 보이는 차서현 대리와 일하게 된다. 첫인상과 달리 차서현이 자꾸 눈에 밟히면서 관계가 달라진다.",
+    "tags": [
+      "오피스 로맨스",
+      "기업 후계자",
+      "직장"
+    ],
+    "characters": [
+      {
+        "name": "차서현",
+        "role": "주요 인물",
+        "traits": [
+          "회사원",
+          "대리"
+        ]
+      },
+      {
+        "name": "한재헌",
+        "role": "주요 인물",
+        "traits": [
+          "태성 후계자"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=14889691"
+      }
+    ]
+  },
+  "14892620": {
+    "summary": "모텔 옥탑방에서 커튼을 열었더니 심해에 가라앉은 세계가 눈앞에 나타난다.",
+    "tags": [
+      "아포칼립스",
+      "심해",
+      "잠수함"
+    ],
+    "characters": [],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=14892620"
+      }
+    ]
+  },
+  "14897050": {
+    "summary": "2006년, 일찍 철이 든 열네 살 고아 박한율은 먹고사는 문제부터 해결하려 한다.",
+    "tags": [
+      "생활물",
+      "성장물",
+      "2000년대"
+    ],
+    "characters": [
+      {
+        "name": "박한율",
+        "role": "주인공",
+        "traits": [
+          "열네 살",
+          "고아"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=14897050"
+      }
+    ]
+  },
+  "14897637": {
+    "summary": "혹한의 북부에서 작물을 키울 수 있는 인물을 중심으로 농사와 북부 생활이 전개된다.",
+    "tags": [
+      "농사",
+      "북부",
+      "대공"
+    ],
+    "characters": [],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=14897637"
+      }
+    ]
+  },
+  "14909613": {
+    "summary": "병자호란 때 갈의준이 거둔 유채는 성인이 되어 그를 다시 만난다. 후견인인 그를 연모하지만, 갈의준은 유채가 다른 사람과 혼인하도록 하려 한다.",
+    "tags": [
+      "시대물",
+      "후견인",
+      "짝사랑",
+      "구원"
+    ],
+    "characters": [
+      {
+        "name": "유채",
+        "role": "여주인공",
+        "traits": [
+          "갈의준의 피후견인",
+          "짝사랑"
+        ]
+      },
+      {
+        "name": "갈의준",
+        "role": "주요 인물",
+        "traits": [
+          "병자호란의 영웅",
+          "유채의 후견인"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=14909613"
+      }
+    ]
+  },
+  "14911249": {
+    "summary": "실패를 바랄수록 드라마가 흥행한다. 주인공의 의도와 결과가 어긋나는 방송계 이야기다.",
+    "tags": [
+      "방송계",
+      "드라마",
+      "의도와 결과의 역전"
+    ],
+    "characters": [],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=14911249"
+      }
+    ]
+  },
+  "14918525": {
+    "summary": "약혼자의 배신을 목격한 희재는 제주도에서 처음 만난 남자에게 복수심으로 다가간다. 그 만남은 약혼자의 가족과 뜻밖의 접점을 만든다.",
+    "tags": [
+      "배신",
+      "복수",
+      "제주도"
+    ],
+    "characters": [
+      {
+        "name": "희재",
+        "role": "여주인공",
+        "traits": []
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공개 순위 소개",
+        "url": "https://series.naver.com/novel/top100List.series?categoryCode=201&rankingTypeCode=DAILY"
+      }
+    ],
+    "notes": "시리즈 공개 순위의 소개에서 확인한 내용입니다."
+  },
+  "14921842": {
+    "summary": "도결은 오래전 만난 여성이 남기고 간 반지를 간직한 채 그녀를 찾아왔다. 아이 새론에게 골수 이식이 필요하다는 부탁을 받으면서 다시 얽힌다.",
+    "tags": [
+      "재회",
+      "육아",
+      "가족"
+    ],
+    "characters": [
+      {
+        "name": "도결",
+        "role": "주요 인물",
+        "traits": []
+      },
+      {
+        "name": "새론",
+        "role": "주요 인물",
+        "traits": [
+          "골수 이식이 필요한 아이"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=14921842"
+      }
+    ]
+  },
+  "14931584": {
+    "summary": "전 연인의 배신을 목격한 고상아는 차정교에게 계약 관계를 제안받는다. 상대가 내민 거래에는 상아가 아직 모르는 의도가 숨어 있다.",
+    "tags": [
+      "계약결혼",
+      "배신",
+      "계략"
+    ],
+    "characters": [
+      {
+        "name": "고상아",
+        "role": "여주인공",
+        "traits": [
+          "계약 관계"
+        ]
+      },
+      {
+        "name": "차정교",
+        "role": "남주인공",
+        "traits": [
+          "계략",
+          "계약 관계"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=14931584"
+      }
+    ],
+    "notes": "검색에 노출된 작가 소개에서는 계약 결혼을 핵심 소재로 설명합니다. 공개 댓글에는 상아의 판단을 답답하게 보는 의견과 차정교의 속내를 궁금해하는 반응이 있습니다."
+  },
+  "14934934": {
+    "summary": "임무 실패 후 은퇴한 특수요원이 미국에서 목장을 인수한다. 목장 안의 버려진 광산으로 들어가자 또 다른 세계가 나온다.",
+    "tags": [
+      "특수요원",
+      "은퇴",
+      "목장",
+      "이세계 통로"
+    ],
+    "characters": [],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=14934934"
+      }
+    ]
+  },
+  "14936322": {
+    "summary": "자기 잇속을 챙기려 선조의 스승이 된 인물이 세제 개혁과 왜적 대비를 건의한다. 본인은 재산을 지키려 하지만 주변에서는 그를 충신으로 여긴다.",
+    "tags": [
+      "대체역사",
+      "조선",
+      "착각물",
+      "정치"
+    ],
+    "characters": [
+      {
+        "name": "선조",
+        "role": "주요 인물",
+        "traits": [
+          "조선 국왕",
+          "주인공의 제자"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=14936322"
+      }
+    ],
+    "notes": "검색에 노출된 시리즈 댓글 표본에서 탐관오리와 간신의 설정이 설득력 있는지를 두고 비판이 보입니다."
+  },
+  "14939085": {
+    "summary": "미국 국세청에서 낮은 직급으로 일하는 인물이 세금을 제대로 내지 않는 거물들을 상대한다.",
+    "tags": [
+      "전문직물",
+      "세무",
+      "미국",
+      "공무원"
+    ],
+    "characters": [],
+    "sources": [
+      {
+        "label": "네이버 시리즈 · 공식 작품 소개",
+        "url": "https://series.naver.com/novel/detail.series?productNo=14939085"
+      }
+    ]
+  }
+}
