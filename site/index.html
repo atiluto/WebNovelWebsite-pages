@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="네이버 시리즈의 장르별 일간 TOP 100과 근거가 있는 작품·인물 정보를 한곳에서 탐색하세요.">
   <title>소설 탐색실 | 시리즈 TOP 100</title>
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./style.css?v=tag-ranking">
   <script src="./backend-config.js" defer></script>
   <script src="./backend.js" defer></script>
   <script src="./suggestions.js" defer></script>
-  <script src="./app.js" defer></script>
+  <script src="./app.js?v=tag-ranking" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -44,12 +44,31 @@
       <div id="genres" class="genres" role="group" aria-label="장르 선택"></div>
       <div class="catalog-layout">
         <details class="filter-panel" id="filter-panel" open>
-          <summary>검색 조건</summary>
+          <summary>검색 조건 · 전체 태그</summary>
           <form id="filters">
             <label for="query">제목 · 작가</label>
             <input id="query" name="query" type="search" placeholder="예 · 화산귀환" autocomplete="off">
-            <label for="tag">작품 태그</label>
+            <label for="tag">작품 태그 직접 검색</label>
             <input id="tag" name="tag" type="search" placeholder="예 · 회귀, 헌터" autocomplete="off">
+            <div class="tag-picker">
+              <details id="tag-browser" class="tag-browser">
+                <summary>전체 태그 둘러보기</summary>
+                <div class="tag-browser-body">
+                  <label for="tag-search">태그 이름 검색</label>
+                  <input id="tag-search" type="search" placeholder="예 · 무공" autocomplete="off" aria-controls="tag-catalog">
+                  <p id="tag-count" class="field-note" role="status">태그를 불러오는 중…</p>
+                  <div id="tag-catalog" class="tag-catalog" role="group" aria-label="선택 가능한 태그"></div>
+                </div>
+              </details>
+              <div id="selected-tags" class="selected-tags" role="group" aria-label="선택한 태그"></div>
+              <fieldset class="tag-mode">
+                <legend>태그 일치 방식</legend>
+                <div class="tag-mode-options">
+                  <label><input type="radio" name="tagMode" value="and" checked> AND · 모두 일치</label>
+                  <label><input type="radio" name="tagMode" value="or"> OR · 하나라도 일치</label>
+                </div>
+              </fieldset>
+            </div>
             <label for="character">같은 인물의 조건</label>
             <input id="character" name="character" type="search" placeholder="예 · 흑발 츤데레" autocomplete="off">
             <p class="field-note">이름·역할·성격·외형·소속을 검색합니다.</p>
@@ -60,8 +79,17 @@
         </details>
         <div class="list-panel">
           <div class="list-head">
-            <p id="result-count" aria-live="polite">순위 불러오는 중…</p>
-            <a class="source-link small" id="genre-source" href="https://series.naver.com/novel/top100List.series?categoryCode=ALL&amp;rankingTypeCode=DAILY" target="_blank" rel="noopener noreferrer">공식 장르 순위 <span aria-hidden="true">↗</span></a>
+            <p id="result-count" tabindex="-1" aria-live="polite">순위 불러오는 중…</p>
+            <div class="list-actions">
+              <label class="sort-control">정렬
+                <select id="sort-order">
+                  <option value="downloads" selected>다운로드순</option>
+                  <option value="comments">댓글순</option>
+                  <option value="genre">장르별 일간 순위</option>
+                </select>
+              </label>
+              <a class="source-link small" id="genre-source" href="https://series.naver.com/novel/top100List.series?categoryCode=ALL&amp;rankingTypeCode=DAILY" target="_blank" rel="noopener noreferrer">공식 장르 순위 <span aria-hidden="true">↗</span></a>
+            </div>
           </div>
           <p id="genre-note" class="genre-note" hidden></p>
           <div id="results" class="results" aria-busy="true"></div>
@@ -72,6 +100,7 @@
     <details class="scope" id="scope">
       <summary>데이터 출처와 검토 범위</summary>
       <p>장르별 일간 순위의 공개 조회본입니다. 조회본별 갱신 시점이 다를 수 있으며, 화면에는 확인된 행만 표시합니다. 순위에 수록된 작품과 인물·태그까지 검토한 작품을 따로 집계합니다.</p>
+      <p>다운로드와 댓글 수는 네이버 시리즈 작품 상세에 공개된 표시값입니다. 표시값이 같으면 다른 지표와 제목으로 순서를 정합니다. 작품별 조회 수는 공개 상세에서 확인되지 않았습니다.</p>
       <p>장르는 시리즈 분류를 따릅니다. 줄거리와 태그, 인물은 작품 소개 등 표시된 출처를 바탕으로 정리했습니다. 일부 작품에는 공개 검색에서 확인한 독자 반응 표본을 별도로 표시합니다. 근거가 부족한 정보는 미확인으로 표시합니다.</p>
       <p>표지는 네이버 시리즈가 제공하는 공개 썸네일 주소로 표시합니다. 표지 주소를 확인하지 못했거나 이미지가 열리지 않으면 장르 아이콘을 표시합니다.</p>
       <a href="https://policy.naver.com/rules/service.html" target="_blank" rel="noopener noreferrer">네이버 이용약관 ↗</a>

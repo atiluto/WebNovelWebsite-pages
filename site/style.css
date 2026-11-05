@@ -66,17 +66,40 @@ h2 { font-size: clamp(25px, 3vw, 35px); letter-spacing: -.065em; line-height: 1.
 #filters input[type="search"] { width: 100%; min-width: 0; min-height: 38px; border: 1px solid var(--line); border-radius: 5px; padding: 6px 8px; background: var(--surface); font-size: 13px; }
 #filters input::placeholder { color: #69786b; opacity: 1; }
 .field-note { color: var(--muted); font-size: 11px; }
+.tag-picker { display: grid; gap: 7px; min-width: 0; margin-block: 2px; }
+.tag-browser { border: 1px solid var(--line); border-radius: 6px; background: #f8faf4; }
+.tag-browser > summary { min-height: 35px; padding: 7px 8px; cursor: pointer; color: var(--green); font-size: 12px; font-weight: 750; }
+.tag-browser-body { display: grid; gap: 5px; padding: 0 8px 8px; }
+#filters .tag-browser-body label { margin-top: 0; }
+.tag-catalog { display: grid; gap: 4px; max-block-size: 16rem; overflow-y: auto; overscroll-behavior-y: contain; padding: 4px; }
+.tag-catalog:empty { display: none; }
+.tag-catalog button, .selected-tags button, .result-tag { border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--green); font-weight: 700; overflow-wrap: anywhere; }
+.tag-catalog button { display: flex; align-items: center; justify-content: space-between; gap: 6px; min-width: 0; min-height: 32px; padding: 5px 7px; text-align: left; font-size: 12px; }
+.tag-catalog button:hover, .selected-tags button:hover, .result-tag:hover { border-color: #7e9984; background: var(--light-green); }
+.tag-catalog button[aria-pressed="true"], .result-tag[aria-pressed="true"] { border-color: var(--green); background: var(--green); color: #fff; }
+.tag-option-count { flex: none; font-size: 11px; font-weight: 500; font-variant-numeric: tabular-nums; }
+.selected-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+.selected-tags:empty { display: none; }
+.selected-tags button { min-height: 27px; max-width: 100%; padding: 3px 7px; font-size: 11px; background: var(--light-green); }
+.tag-mode { min-width: 0; margin: 0; padding: 0; border: 0; }
+.tag-mode legend { padding: 0; color: var(--muted); font-size: 11px; font-weight: 700; }
+.tag-mode-options { display: flex; flex-wrap: wrap; column-gap: 8px; }
+#filters .tag-mode label { display: inline-flex; align-items: center; gap: 4px; min-height: 29px; margin-top: 0; white-space: nowrap; }
+.tag-mode input { margin: 0; accent-color: var(--green); }
 #filters .check { display: flex; gap: 6px; align-items: center; margin-top: 5px; }
 .check input { accent-color: var(--green); }
 #clear-filters { margin-top: 6px; }
 .list-panel { min-width: 0; }
 .list-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 6px 12px; padding: 13px 15px; border-bottom: 1px solid var(--line); }
 .list-head p { font-size: 13px; font-weight: 750; }
+.list-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 7px 13px; }
+.sort-control { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); font-size: 12px; font-weight: 700; }
+.sort-control select { min-height: 33px; max-width: 100%; padding: 4px 6px; border: 1px solid var(--line); border-radius: 5px; color: var(--ink); background: var(--surface); font: inherit; }
 .small { font-size: 12px; }
 .genre-note { padding: 10px 15px; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 12px; background: #faf9f1; }
-.result { display: grid; grid-template-columns: 38px 48px minmax(0, 1fr) auto; gap: 12px; align-items: center; min-height: 85px; padding: 11px 15px; }
+.result { display: grid; grid-template-columns: 38px 48px minmax(0, 1fr) auto; gap: 12px; align-items: center; min-height: 85px; padding: 11px 15px; cursor: pointer; }
 .result + .result { border-top: 1px solid var(--line); }
-.result:hover { background: #f3f6ed; }
+.result:hover, .result:focus-within { background: #f3f6ed; }
 .rank { color: var(--green); font: 700 22px/1 system-ui, sans-serif; font-variant-numeric: tabular-nums; text-align: center; }
 .book { position: relative; aspect-ratio: 2 / 3; min-width: 0; border-radius: 4px 6px 6px 4px; background: var(--book, #38634c); display: grid; place-items: center; color: #fff; font: 17px/1 Georgia, serif; overflow: hidden; }
 .book-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: var(--book, #38634c); }
@@ -87,6 +110,9 @@ h2 { font-size: clamp(25px, 3vw, 35px); letter-spacing: -.065em; line-height: 1.
 .result-title { border: 0; background: transparent; padding: 0; text-align: left; font-weight: 800; font-size: 15px; line-height: 1.45; overflow-wrap: anywhere; }
 .result-title:hover { color: var(--green); text-decoration: underline; }
 .result-meta, .result-match { color: var(--muted); font-size: 12px; margin-top: 3px; }
+.result-metrics { color: var(--muted); font-size: 11px; margin-top: 3px; font-variant-numeric: tabular-nums; }
+.result-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 5px; }
+.result-tag { min-height: 24px; max-width: 100%; padding: 2px 6px; font-size: 11px; line-height: 1.35; }
 .result-match { color: var(--green); }
 .result-match.unknown { color: var(--amber); }
 .pill { display: inline-flex; gap: 5px; align-items: center; padding: 3px 7px; border-radius: 4px; background: var(--light-green); color: var(--green); font-size: 11px; font-weight: 700; white-space: nowrap; }
@@ -176,7 +202,8 @@ dialog::backdrop { background: #112a20a6; }
   .catalog-layout { grid-template-columns: minmax(0, 1fr); }
   #filters { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; }
   #filters .field-note { grid-column: 1 / -1; }
-  .result { grid-template-columns: 26px 40px minmax(0, 1fr); gap: 8px; padding-inline: 10px; }
+  .tag-picker { grid-column: 1 / -1; }
+  .result { grid-template-columns: 31px 40px minmax(0, 1fr); gap: 8px; padding-inline: 10px; }
   .result .pill { grid-column: 3; justify-self: start; }
   .rank { font-size: 18px; }
   .header-inner { min-height: 55px; }
@@ -184,5 +211,6 @@ dialog::backdrop { background: #112a20a6; }
   #filters input[type="search"] { font-size: 16px; }
 }
 @media (pointer: coarse) {
-  button, #filters .check { min-height: 44px; }
+  button, #filters .check, #filters .tag-mode label, .tag-browser > summary,
+  .tag-catalog button, .selected-tags button, .result-tag, .sort-control select { min-height: 44px; }
 }
