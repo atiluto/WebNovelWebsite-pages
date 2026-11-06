@@ -54,6 +54,11 @@ h2 { font-size: clamp(25px, 3vw, 35px); letter-spacing: -.065em; line-height: 1.
 .period-chip { display: inline-flex; align-items: center; gap: 7px; border: 1px solid var(--line); border-radius: 6px; padding: 6px 9px; font-size: 12px; font-weight: 700; white-space: nowrap; }
 .period-chip > span { background: #537b4e; }
 .genres { display: flex; flex-wrap: wrap; gap: 7px; margin-block: 17px 17px; }
+.platforms { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 12px; }
+.platform { min-height: 38px; padding: 7px 14px; border: 1px solid var(--line); border-radius: 7px; background: var(--surface); font-size: 14px; font-weight: 750; }
+.platform:hover:not(:disabled) { border-color: #7e9984; }
+.platform[aria-pressed="true"] { background: var(--green); border-color: var(--green); color: #fff; }
+.platform:disabled { opacity: .55; cursor: default; }
 .genre, .secondary, .page-button { min-height: 35px; padding: 6px 11px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); font-size: 13px; font-weight: 700; }
 .genre:hover, .secondary:hover, .page-button:hover:not([disabled]) { border-color: #7e9984; background: var(--light-green); }
 .genre[aria-pressed="true"], .page-button[aria-current="page"] { background: var(--green); border-color: var(--green); color: #fff; }

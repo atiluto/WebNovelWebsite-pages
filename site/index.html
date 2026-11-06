@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="네이버 시리즈의 장르별 일간 TOP 100과 근거가 있는 작품·인물 정보를 한곳에서 탐색하세요.">
-  <title>소설 탐색실 | 시리즈 TOP 100</title>
-  <link rel="stylesheet" href="./style.css?v=tag-ranking">
+  <meta name="description" content="네이버 시리즈와 카카오페이지의 장르별 순위에서 작품·태그·등장인물을 찾아보세요.">
+  <title>소설 탐색실 | 네이버 시리즈 · 카카오페이지</title>
+  <link rel="stylesheet" href="./style.css?v=platforms">
   <script src="./backend-config.js" defer></script>
   <script src="./backend.js" defer></script>
   <script src="./suggestions.js" defer></script>
-  <script src="./app.js?v=tag-ranking" defer></script>
+  <script src="./app.js?v=platforms" defer></script>
 </head>
 <body>
   <header class="site-header">
     <div class="shell header-inner">
       <a class="brand" href="./" aria-label="소설 탐색실 홈"><span class="brand-mark" aria-hidden="true">文</span>소설 탐색실</a>
-      <a class="source-link" href="https://series.naver.com/novel/top100List.series?categoryCode=ALL&amp;rankingTypeCode=DAILY" target="_blank" rel="noopener noreferrer">시리즈 원본 순위 <span aria-hidden="true">↗</span></a>
+      <a class="source-link" id="platform-source" href="https://series.naver.com/novel/top100List.series?categoryCode=ALL&amp;rankingTypeCode=DAILY" target="_blank" rel="noopener noreferrer">네이버 시리즈 순위 ↗</a>
     </div>
   </header>
   <main class="shell">
@@ -23,10 +23,10 @@
       <div class="hero-copy">
         <p class="eyebrow"><span></span> 웹소설 취향 검색</p>
         <h1 id="page-title">다음에 읽을<br>웹소설을 찾는 곳</h1>
-        <p>시리즈 장르별 일간 TOP 100에서 작품을 고르고,<br class="hero-break"> 줄거리와 등장인물, 태그의 근거를 확인하세요.</p>
+        <p>네이버 시리즈와 카카오페이지에서 작품을 고르고,<br class="hero-break"> 줄거리와 등장인물, 태그의 근거를 확인하세요.</p>
       </div>
       <aside class="snapshot" aria-label="데이터 확인 현황">
-        <div class="snapshot-head"><span>자료 수록 현황</span><span class="live-label">일간 · 조회본</span></div>
+        <div class="snapshot-head"><span>자료 수록 현황</span><span class="live-label" id="snapshot-platform">네이버 시리즈</span></div>
         <dl>
           <div><dt>수록 장르</dt><dd id="stat-genres">—</dd></div>
           <div><dt>확인 순위</dt><dd id="stat-ranks">—</dd></div>
@@ -38,8 +38,12 @@
     </section>
     <section class="catalog" aria-labelledby="catalog-title">
       <div class="section-head">
-        <div><p class="eyebrow section-kicker">SERIES RANKINGS</p><h2 id="catalog-title">장르별 TOP 100</h2></div>
-        <span class="period-chip"><span></span>일간 순위</span>
+        <div><p class="eyebrow section-kicker">WEB NOVEL RANKINGS</p><h2 id="catalog-title">장르별 TOP 100</h2></div>
+        <span class="period-chip"><span></span><b id="ranking-period">일간 순위</b></span>
+      </div>
+      <div id="platforms" class="platforms" role="group" aria-label="플랫폼 선택">
+        <button type="button" class="platform" data-platform="series" aria-pressed="true">네이버 시리즈</button>
+        <button type="button" class="platform" data-platform="kakao" aria-pressed="false" disabled>카카오페이지</button>
       </div>
       <div id="genres" class="genres" role="group" aria-label="장르 선택"></div>
       <div class="catalog-layout">
@@ -99,14 +103,14 @@
     </section>
     <details class="scope" id="scope">
       <summary>데이터 출처와 검토 범위</summary>
-      <p>장르별 일간 순위의 공개 조회본입니다. 조회본별 갱신 시점이 다를 수 있으며, 화면에는 확인된 행만 표시합니다. 순위에 수록된 작품과 인물·태그까지 검토한 작품을 따로 집계합니다.</p>
-      <p>다운로드와 댓글 수는 네이버 시리즈 작품 상세에 공개된 표시값입니다. 표시값이 같으면 다른 지표와 제목으로 순서를 정합니다. 작품별 조회 수는 공개 상세에서 확인되지 않았습니다.</p>
-      <p>장르는 시리즈 분류를 따릅니다. 줄거리와 태그, 인물은 작품 소개 등 표시된 출처를 바탕으로 정리했습니다. 일부 작품에는 공개 검색에서 확인한 독자 반응 표본을 별도로 표시합니다. 근거가 부족한 정보는 미확인으로 표시합니다.</p>
-      <p>표지는 네이버 시리즈가 제공하는 공개 썸네일 주소로 표시합니다. 표지 주소를 확인하지 못했거나 이미지가 열리지 않으면 장르 아이콘을 표시합니다.</p>
+      <p>각 플랫폼의 공개 순위와 장르 분류를 사용합니다. 플랫폼별 확인 시점과 작품 수는 목록 위에 표시합니다.</p>
+      <p>다운로드, 댓글, 조회 수는 각 플랫폼에서 확인한 공개 표시값입니다. 지표별 순위는 같은 플랫폼의 수록작끼리 비교합니다.</p>
+      <p>줄거리와 태그, 인물은 작품 소개 등 표시된 출처를 바탕으로 정리했습니다. 일부 작품에는 공개 댓글·리뷰에서 확인한 독자 반응을 표시합니다. 근거가 부족한 정보는 미확인으로 표시합니다.</p>
+      <p>표지는 각 플랫폼의 공개 썸네일로 표시합니다. 표지가 열리지 않으면 장르 아이콘을 표시합니다.</p>
       <a href="https://policy.naver.com/rules/service.html" target="_blank" rel="noopener noreferrer">네이버 이용약관 ↗</a>
     </details>
   </main>
-  <footer class="shell footer"><span>소설 탐색실</span><span>네이버 시리즈 공개 자료 기반 · 독립 탐색 도구</span><a id="operator-link" href="./admin.html" hidden>제보 검토</a></footer>
+  <footer class="shell footer"><span>소설 탐색실</span><span>네이버 시리즈 · 카카오페이지 공개 자료 기반</span><a id="operator-link" href="./admin.html" hidden>제보 검토</a></footer>
   <dialog id="work-dialog" aria-labelledby="work-title">
     <div class="dialog-bar"><span class="eyebrow">작품 기록</span><form method="dialog"><button type="submit" class="secondary close" aria-label="작품 상세 닫기">닫기 <span aria-hidden="true">×</span></button></form></div>
     <div id="work-detail"></div>

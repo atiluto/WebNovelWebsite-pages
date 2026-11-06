@@ -1,5 +1,7 @@
 'use strict';
 
+const platformsPanel = document.querySelector('#platforms');
+const platformSource = document.querySelector('#platform-source');
 const genresPanel = document.querySelector('#genres');
 const form = document.querySelector('#filters');
 const resultsPanel = document.querySelector('#results');
@@ -15,12 +17,31 @@ const tagPanel = document.querySelector('#tag-catalog');
 const tagCount = document.querySelector('#tag-count');
 const selectedTagPanel = document.querySelector('#selected-tags');
 const pageSize = 12;
-const originalRankUrl = genreSource.href;
 const backend = window.NovelBackend;
 const tagCatalog = new Map();
 const selectedTags = new Set();
-const metricLabels = { downloads: '다운로드', comments: '댓글' };
+const platforms = {
+  series: {
+    name: '네이버 시리즈',
+    url: platformSource.href,
+    title: '장르별 TOP 100',
+    period: '일간 순위',
+    metrics: { downloads: '다운로드', comments: '댓글' }
+  },
+  kakao: {
+    name: '카카오페이지',
+    url: 'https://page.kakao.com/menu/10011',
+    title: '장르별 TOP 100',
+    period: '장르별 순위',
+    metrics: { views: '조회', comments: '댓글' }
+  }
+};
 let catalog;
+let researchSnapshot;
+let seriesMetrics;
+let platformGenres;
+let platform;
+let selectedPlatform = 'series';
 let works;
 let worksById;
 let orderings;
@@ -140,7 +161,8 @@ function workMeta(work) {
 }
 
 function coverMarkup(work, large = false) {
-  const source = work.coverUrl?.startsWith('https://comicthumb-phinf.pstatic.net/') ? work.coverUrl : '';
+  const source = /^https:\/\/(?:comicthumb-phinf\.pstatic\.net|dn-img-page\.kakao\.com)\//.test(work.coverUrl)
+    ? work.coverUrl : '';
   if (large && !source) return '';
   const image = source
     ? '<img class="book-image" src="' + escapeHtml(source) + '" alt="" decoding="async" referrerpolicy="no-referrer"' +
@@ -151,7 +173,7 @@ function coverMarkup(work, large = false) {
 }
 
 function metricText(work) {
-  return Object.entries(metricLabels).map(([key, label]) => label + ' ' + (work.metrics?.[key]?.label ?? '미확인')).join(' · ');
+  return Object.entries(platform.metrics).map(([key, label]) => label + ' ' + (work.metrics?.[key]?.label ?? '미확인')).join(' · ');
 }
 
 function row({ work, reason, unknown, matchedTags = [] }, order) {
@@ -159,7 +181,7 @@ function row({ work, reason, unknown, matchedTags = [] }, order) {
   const tags = [...new Set([...matchedTags, ...labels.slice(0, 4)])];
   const rank = order === 'genre' ? work.rank : work.metricRanks[order];
   const rankLabel = rank == null ? '집계 순위 없음'
-    : (order === 'genre' ? work.genre.name : '전체 ' + metricLabels[order]) + ' ' + rank + '위';
+    : (order === 'genre' ? work.genre.name : platform.name + ' ' + platform.metrics[order]) + ' ' + rank + '위';
   return '<article class="result" data-work="' + escapeHtml(work.id) + '">' +
     '<span class="rank" aria-label="' + escapeHtml(rankLabel) + '">' + (rank ?? '—') + '</span>' +
     coverMarkup(work) +
@@ -198,7 +220,7 @@ function render() {
     reviewed: form.elements.reviewed.checked,
     unknown: form.elements.unknown.checked
   };
-  const genre = catalog.genres.find((item) => item.id === selectedGenre);
+  const genre = platformGenres.find((item) => item.id === selectedGenre);
   const filtered = orderings[order].filter((work) => !genre || work.genre === genre);
   const matches = filtered.map((work) => matchWork(work, query)).filter(Boolean);
   matches.sort((first, second) => Number(first.unknown) - Number(second.unknown));
@@ -211,20 +233,19 @@ function render() {
   const paginationLabel = pageCount > 1 ? ' · ' + page + ' / ' + pageCount + ' 페이지' : '';
   resultCount.textContent = (searchActive ? '일치 ' + (total - unknownCount) + '편' : '수록 ' + total + '편') +
     (unknownCount ? ' · 미확인 ' + unknownCount + '편' : '') + paginationLabel;
-  const rankUrl = genre?.url;
-  genreSource.href = typeof rankUrl === 'string' && rankUrl.startsWith('https://series.naver.com/') ? rankUrl : originalRankUrl;
+  genreSource.href = genre?.url ?? platform.url;
 
   const removed = genre?.excludedRanks?.length ?? 0;
   let note = '';
-  if (genre && !genre.entries.length) note = '확인한 공개 일간 순위에 이 장르의 작품이 표시되지 않았습니다.';
+  if (genre && !genre.entries.length) note = '확인한 공개 순위에 이 장르의 작품이 표시되지 않았습니다.';
   else if (order !== 'genre') {
     note = metricTotals[order]
-      ? '전체 수록작 중 시리즈 ' + metricLabels[order] + ' 수가 확인된 ' + metricTotals[order] +
+      ? platform.name + ' 수록작 중 ' + platform.metrics[order] + ' 수가 확인된 ' + metricTotals[order] +
         '편의 순위입니다. 미확인 작품은 뒤에 표시합니다.' + (metricDate ? ' ' + metricDate + ' 집계.' : '')
-      : '시리즈 ' + metricLabels[order] + ' 수를 확인한 작품이 없습니다.';
-  } else if (!genre) note = '모든 장르의 시리즈 일간 순위를 나란히 보여줍니다.';
+      : platform.name + ' ' + platform.metrics[order] + ' 수를 확인한 작품이 없습니다.';
+  } else if (!genre) note = platform.name + '의 장르별 ' + platform.period + '를 나란히 보여줍니다.';
   else if (removed) note = '갱신 시점이 다른 조회본에서 중복된 작품 ' + removed + '건을 제외했습니다. 남은 작품에는 공식 조회본의 순위를 유지했습니다.';
-  else if (genre.entries.length < 100) note = '확인한 공개 일간 순위에 표시된 ' + genre.entries.length + '편을 수록했습니다.';
+  else if (genre.entries.length < 100) note = '공개 ' + platform.period + '에서 확인한 ' + genre.entries.length + '편을 수록했습니다.';
   genreNote.hidden = !note;
   genreNote.textContent = note;
 
@@ -252,18 +273,20 @@ function showDetail(work) {
   const people = notes?.characters ?? [];
   const visible = people.filter((person) => !person.spoiler);
   const spoilers = people.filter((person) => person.spoiler);
-  const summary = notes?.summary ? escapeHtml(notes.summary) : '확인한 줄거리 정보가 없습니다.';
+  const summary = notes?.summary ? escapeHtml(notes.summary)
+    : selectedPlatform === 'kakao' && notes ? '줄거리는 카카오페이지 작품 소개에서 확인할 수 있습니다.'
+    : '확인한 줄거리 정보가 없습니다.';
   const heroine = notes?.heroine ?? (visible.some((person) => person.role === '히로인') ? '있음 확인' : '미확인');
   const harem = notes?.harem ?? '미확인';
   const sources = notes?.sources?.map((source) => externalLink(source.url, source.label))
     .filter(Boolean).map((link) => '<li>' + link + '</li>').join('') ?? '';
   detail.innerHTML =
     '<header class="detail-heading">' + coverMarkup(work, true) + '<div>' +
-    '<span class="pill">' + escapeHtml(work.genre.name) + ' · ' + escapeHtml(work.rank) + '위 조회본</span>' +
+    '<span class="pill">' + escapeHtml(platform.name + ' · ' + work.genre.name + ' ' + work.rank + '위') + '</span>' +
     '<h2 class="work-title" id="work-title">' + escapeHtml(work.title) + '</h2>' +
     '<p class="detail-meta">' + escapeHtml(workMeta(work)) + '</p>' +
-    '<p class="detail-meta">' + escapeHtml(metricText(work) + (metricDate ? ' · 시리즈 ' + metricDate + ' 집계' : '')) + '</p>' +
-    '<div class="detail-actions">' + externalLink(work.url, '시리즈 작품 보기', 'source-link') +
+    '<p class="detail-meta">' + escapeHtml(metricText(work) + (metricDate ? ' · ' + metricDate + ' 집계' : '')) + '</p>' +
+    '<div class="detail-actions">' + externalLink(work.url, platform.name + ' 작품 보기', 'source-link') +
     externalLink(work.rankUrl || work.genre.url, '순위 출처', 'source-link') + '</div></div></header>' +
     '<dl class="facts"><div><dt>히로인</dt><dd>' + escapeHtml(heroine) + '</dd></div>' +
     '<div><dt>하렘</dt><dd>' + escapeHtml(harem) + '</dd></div>' +
@@ -276,7 +299,9 @@ function showDetail(work) {
     (visible.length ? visible.map(personMarkup).join('') : '<p class="muted">공개 근거로 확인한 인물 정보가 없습니다.</p>') +
     (spoilers.length ? '<details class="spoilers"><summary>스포일러가 포함된 인물 정보 보기</summary>' + spoilers.map(personMarkup).join('') + '</details>' : '') + '</section>' +
     '<section class="detail-section"><h3>근거와 검토 범위</h3>' +
-    (sources ? '<ul class="sources">' + sources + '</ul>' : '<p class="muted">해당 순위 조회본에서 제목과 기본 정보를 확인했습니다.</p>') +
+    (sources ? '<ul class="sources">' + sources + '</ul>'
+      : '<p class="muted">' + (work.ageRestricted ? '성인 인증이 필요한 작품입니다. 공개 순위에서 제목과 기본 정보를 확인했습니다.'
+        : '해당 순위 조회본에서 제목과 기본 정보를 확인했습니다.') + '</p>') +
     (notes?.notes ? '<p class="muted review-note">' + escapeHtml(notes.notes) + '</p>' : '') +
     '</section>' +
     '<details class="detail-section contribution"><summary>정보 제보</summary><div class="suggestion-content"></div></details>';
@@ -292,22 +317,27 @@ function compareCount(first, second, key) {
   return b - a;
 }
 
-function initialize(data, reviews, metrics) {
-  catalog = data;
-  works = catalog.genres.flatMap((genre) => genre.entries.map((entry) => ({
-    ...entry, genre, research: Object.hasOwn(reviews, entry.id) ? reviews[entry.id] : null,
-    metrics: metrics?.works?.[entry.id], metricRanks: {}
+function showPlatform(id) {
+  const snapshot = catalog.platforms?.[id];
+  selectedPlatform = id;
+  platform = { ...platforms[id], ...snapshot };
+  platformGenres = catalog.genres.filter((genre) => (genre.platform ?? 'series') === id);
+  selectedGenre = 'all';
+  page = 1;
+  works = platformGenres.flatMap((genre) => genre.entries.map((entry) => ({
+    ...entry, genre, research: Object.hasOwn(researchSnapshot, entry.id) ? researchSnapshot[entry.id] : null,
+    metrics: id === 'series' ? seriesMetrics?.works?.[entry.id] : entry.metrics, metricRanks: {}
   })));
   worksById = new Map(works.map((work) => [work.id, work]));
-  const date = new Date(metrics?.checkedAt ?? '');
-  if (!Number.isNaN(date.getTime())) {
-    metricDate = new Intl.DateTimeFormat('ko-KR', { timeZone: 'Asia/Seoul', dateStyle: 'medium' }).format(date);
-  }
+  const date = new Date((id === 'series' ? seriesMetrics?.checkedAt : snapshot?.metricsCheckedAt ?? snapshot?.checkedAt) ?? '');
+  metricDate = Number.isNaN(date.getTime()) ? ''
+    : new Intl.DateTimeFormat('ko-KR', { timeZone: 'Asia/Seoul', dateStyle: 'medium' }).format(date);
   const compareTitle = (first, second) => first.title.localeCompare(second.title, 'ko') || first.id.localeCompare(second.id);
   orderings = { genre: [...works].sort((first, second) => first.rank - second.rank || compareTitle(first, second)) };
   metricTotals = {};
-  for (const key of Object.keys(metricLabels)) {
-    const other = key === 'downloads' ? 'comments' : 'downloads';
+  const [primaryMetric, secondaryMetric] = Object.keys(platform.metrics);
+  for (const key of Object.keys(platform.metrics)) {
+    const other = key === primaryMetric ? secondaryMetric : primaryMetric;
     orderings[key] = [...works].sort((first, second) =>
       compareCount(first, second, key) || compareCount(first, second, other) || compareTitle(first, second));
     metricTotals[key] = 0;
@@ -326,24 +356,46 @@ function initialize(data, reviews, metrics) {
   }
   const tagEntries = [...tagCounts].sort(([, first], [, second]) =>
     second.count - first.count || first.label.localeCompare(second.label, 'ko'));
+  tagCatalog.clear();
   for (const [key, tag] of tagEntries) tagCatalog.set(key, tag);
+  for (const key of selectedTags) if (!tagCatalog.has(key)) selectedTags.delete(key);
   renderTagCatalog();
+  renderSelectedTags();
 
-  const displayed = catalog.genres.filter((genre) => genre.entries.length).length;
-  const reviewed = new Set(works.filter((work) => work.research).map((work) => work.id));
-  document.querySelector('#stat-genres').textContent = displayed + ' / ' + catalog.genres.length;
+  const displayed = platformGenres.filter((genre) => genre.entries.length).length;
+  const reviewed = works.filter((work) => work.research).length;
+  document.querySelector('#stat-genres').textContent = displayed + ' / ' + platformGenres.length;
   document.querySelector('#stat-ranks').textContent = works.length.toLocaleString('ko-KR');
-  document.querySelector('#stat-research').textContent = reviewed.size.toLocaleString('ko-KR');
-  const checked = new Date(catalog.checkedAt);
+  document.querySelector('#stat-research').textContent = reviewed.toLocaleString('ko-KR');
+  document.querySelector('#catalog-title').textContent = platform.title;
+  document.querySelector('#ranking-period').textContent = platform.period;
+  document.querySelector('#snapshot-platform').textContent = platform.name;
+  platformSource.href = platform.url;
+  platformSource.textContent = platform.name + ' 순위 ↗';
+  const checked = new Date(snapshot?.checkedAt ?? catalog.checkedAt);
   document.querySelector('#snapshot-date').textContent = Number.isNaN(checked.getTime())
     ? '공개 순위 조회본'
     : new Intl.DateTimeFormat('ko-KR', { timeZone: 'Asia/Seoul', dateStyle: 'long' }).format(checked) + ' 확인 · 공개 조회본';
-  genresPanel.innerHTML = [{ id: 'all', name: '모든 장르', entries: works }, ...catalog.genres].map((genre) =>
+  sortOrder.innerHTML = Object.entries(platform.metrics).map(([key, label]) =>
+    '<option value="' + escapeHtml(key) + '">' + escapeHtml(label) + '순</option>').join('') +
+    '<option value="genre">장르별 ' + escapeHtml(platform.period) + '</option>';
+  sortOrder.value = primaryMetric;
+  genresPanel.innerHTML = [{ id: 'all', name: '모든 장르', entries: works }, ...platformGenres].map((genre) =>
     '<button class="genre" type="button" data-genre="' + escapeHtml(genre.id) + '" aria-pressed="' +
     (genre.id === selectedGenre) + '">' + escapeHtml(genre.name) + '<span class="genre-count">' +
     genre.entries.length + '</span></button>').join('');
   resultsPanel.setAttribute('aria-busy', 'false');
   render();
+}
+
+function initialize(data, reviews, metrics) {
+  catalog = data;
+  researchSnapshot = reviews;
+  seriesMetrics = metrics;
+  for (const button of platformsPanel.querySelectorAll('button[data-platform]')) {
+    button.disabled = !catalog.genres.some((genre) => (genre.platform ?? 'series') === button.dataset.platform && genre.entries.length);
+  }
+  showPlatform('series');
 }
 
 async function json(path) {
@@ -394,6 +446,12 @@ form.addEventListener('reset', () => {
   }, 0);
 });
 sortOrder.addEventListener('change', () => { page = 1; render(); });
+platformsPanel.addEventListener('click', (event) => {
+  const button = event.target.closest('button[data-platform]');
+  if (!catalog || !button || button.disabled || button.dataset.platform === selectedPlatform) return;
+  showPlatform(button.dataset.platform);
+  for (const tab of platformsPanel.querySelectorAll('button')) tab.setAttribute('aria-pressed', String(tab === button));
+});
 tagPanel.addEventListener('click', (event) => {
   const button = event.target.closest('button[data-tag]');
   if (button) toggleTag(button.dataset.tag);
@@ -408,7 +466,7 @@ genresPanel.addEventListener('click', (event) => {
   const button = event.target.closest('button[data-genre]');
   if (!button) return;
   const nextGenre = button.dataset.genre;
-  if (nextGenre !== selectedGenre) sortOrder.value = nextGenre === 'all' ? 'downloads' : 'genre';
+  if (nextGenre !== selectedGenre) sortOrder.value = nextGenre === 'all' ? Object.keys(platform.metrics)[0] : 'genre';
   selectedGenre = nextGenre;
   for (const tab of genresPanel.querySelectorAll('button')) tab.setAttribute('aria-pressed', String(tab === button));
   page = 1;
