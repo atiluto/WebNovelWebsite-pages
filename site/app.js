@@ -34,6 +34,20 @@ const platforms = {
     title: '장르별 TOP 100',
     period: '장르별 순위',
     metrics: { views: '조회', comments: '댓글' }
+  },
+  novelpia: {
+    name: '노벨피아',
+    url: 'https://novelpia.com/top100/all/today/view',
+    title: '장르별 TOP 100',
+    period: '24시간 순위',
+    metrics: { rankViews: '24시간 회차 조회' }
+  },
+  munpia: {
+    name: '문피아',
+    url: 'https://www.munpia.com/best/plsa.genre',
+    title: '장르별 TOP 100',
+    period: '유료 베스트',
+    metrics: { views: '조회', likes: '좋아요' }
   }
 };
 let catalog;
@@ -43,7 +57,7 @@ let platformGenres;
 let platform;
 let selectedPlatform = 'series';
 let works;
-let worksById;
+let worksByGenre;
 let orderings;
 let metricTotals;
 let metricDate = '';
@@ -124,7 +138,7 @@ function matchWork(work, query) {
   const notes = work.research;
   const keywords = query.title;
   if (keywords && !contains([work.title, work.author], keywords)) return null;
-  if (query.reviewed && !notes) return null;
+  if (query.reviewed && !hasDetailedReview(work)) return null;
 
   const labels = notes?.tags ?? [];
   const tagChecks = [
@@ -161,7 +175,7 @@ function workMeta(work) {
 }
 
 function coverMarkup(work, large = false) {
-  const source = /^https:\/\/(?:comicthumb-phinf\.pstatic\.net|dn-img-page\.kakao\.com)\//.test(work.coverUrl)
+  const source = /^https:\/\/(?:comicthumb-phinf\.pstatic\.net|dn-img-page\.kakao\.com|images\.novelpia\.com|cdn1\.munpia\.com)\//.test(work.coverUrl)
     ? work.coverUrl : '';
   if (large && !source) return '';
   const image = source
@@ -176,13 +190,19 @@ function metricText(work) {
   return Object.entries(platform.metrics).map(([key, label]) => label + ' ' + (work.metrics?.[key]?.label ?? '미확인')).join(' · ');
 }
 
+function hasDetailedReview(work) {
+  if (selectedPlatform === 'series' || selectedPlatform === 'kakao') return Boolean(work.research);
+  return Boolean(work.research?.summary || work.research?.characters?.length);
+}
+
 function row({ work, reason, unknown, matchedTags = [] }, order) {
   const labels = work.research?.tags ?? [];
+  const reviewed = hasDetailedReview(work);
   const tags = [...new Set([...matchedTags, ...labels.slice(0, 4)])];
   const rank = order === 'genre' ? work.rank : work.metricRanks[order];
   const rankLabel = rank == null ? '집계 순위 없음'
     : (order === 'genre' ? work.genre.name : platform.name + ' ' + platform.metrics[order]) + ' ' + rank + '위';
-  return '<article class="result" data-work="' + escapeHtml(work.id) + '">' +
+  return '<article class="result" data-work="' + escapeHtml(work.id) + '" data-genre="' + escapeHtml(work.genre.id) + '">' +
     '<span class="rank" aria-label="' + escapeHtml(rankLabel) + '">' + (rank ?? '—') + '</span>' +
     coverMarkup(work) +
     '<div><button class="result-title" type="button" aria-haspopup="dialog">' + escapeHtml(work.title) + '</button>' +
@@ -190,7 +210,8 @@ function row({ work, reason, unknown, matchedTags = [] }, order) {
     '<p class="result-metrics">' + escapeHtml(metricText(work)) + '</p>' +
     (reason ? '<p class="result-match' + (unknown ? ' unknown' : '') + '">' + escapeHtml(reason) + '</p>' : '') +
     (tags.length ? '<div class="result-tags">' + tags.map((tag) => tagButton(tag, 'result-tag')).join('') + '</div>' : '') +
-    '</div><span class="pill' + (work.research ? '' : ' neutral') + '">' + (work.research ? '상세 검토' : '순위 확인') + '</span>' +
+    '</div><span class="pill' + (reviewed ? '' : ' neutral') + '">' +
+    (reviewed ? '상세 검토' : labels.length ? '태그 확인' : '순위 확인') + '</span>' +
     '</article>';
 }
 
@@ -221,7 +242,10 @@ function render() {
     unknown: form.elements.unknown.checked
   };
   const genre = platformGenres.find((item) => item.id === selectedGenre);
-  const filtered = orderings[order].filter((work) => !genre || work.genre === genre);
+  const placed = genre && worksByGenre.get(genre.id);
+  const filtered = !placed ? orderings[order] : order === 'genre'
+    ? [...placed.values()].sort((first, second) => first.rank - second.rank)
+    : orderings[order].map((work) => placed.get(work.id)).filter(Boolean);
   const matches = filtered.map((work) => matchWork(work, query)).filter(Boolean);
   matches.sort((first, second) => Number(first.unknown) - Number(second.unknown));
   const unknownCount = matches.filter((match) => match.unknown).length;
@@ -244,7 +268,8 @@ function render() {
         '편의 순위입니다. 미확인 작품은 뒤에 표시합니다.' + (metricDate ? ' ' + metricDate + ' 집계.' : '')
       : platform.name + ' ' + platform.metrics[order] + ' 수를 확인한 작품이 없습니다.';
   } else if (!genre) note = platform.name + '의 장르별 ' + platform.period + '를 나란히 보여줍니다.';
-  else if (removed) note = '갱신 시점이 다른 조회본에서 중복된 작품 ' + removed + '건을 제외했습니다. 남은 작품에는 공식 조회본의 순위를 유지했습니다.';
+  else if (genre.note) note = genre.note;
+  else if (removed) note = '중복된 작품 ' + removed + '건을 제외했습니다. 남은 작품에는 공식 조회본의 순위를 유지했습니다.';
   else if (genre.entries.length < 100) note = '공개 ' + platform.period + '에서 확인한 ' + genre.entries.length + '편을 수록했습니다.';
   genreNote.hidden = !note;
   genreNote.textContent = note;
@@ -274,7 +299,7 @@ function showDetail(work) {
   const visible = people.filter((person) => !person.spoiler);
   const spoilers = people.filter((person) => person.spoiler);
   const summary = notes?.summary ? escapeHtml(notes.summary)
-    : selectedPlatform === 'kakao' && notes ? '줄거리는 카카오페이지 작품 소개에서 확인할 수 있습니다.'
+    : selectedPlatform !== 'series' && notes ? '줄거리는 ' + platform.name + ' 작품 소개에서 확인할 수 있습니다.'
     : '확인한 줄거리 정보가 없습니다.';
   const heroine = notes?.heroine ?? (visible.some((person) => person.role === '히로인') ? '있음 확인' : '미확인');
   const harem = notes?.harem ?? '미확인';
@@ -324,11 +349,23 @@ function showPlatform(id) {
   platformGenres = catalog.genres.filter((genre) => (genre.platform ?? 'series') === id);
   selectedGenre = 'all';
   page = 1;
-  works = platformGenres.flatMap((genre) => genre.entries.map((entry) => ({
-    ...entry, genre, research: Object.hasOwn(researchSnapshot, entry.id) ? researchSnapshot[entry.id] : null,
-    metrics: id === 'series' ? seriesMetrics?.works?.[entry.id] : entry.metrics, metricRanks: {}
-  })));
-  worksById = new Map(works.map((work) => [work.id, work]));
+  const uniqueWorks = new Map();
+  worksByGenre = new Map();
+  for (const genre of platformGenres) {
+    const placed = new Map();
+    for (const entry of genre.entries) {
+      const primary = uniqueWorks.get(entry.id);
+      const work = {
+        ...entry, genre, research: Object.hasOwn(researchSnapshot, entry.id) ? researchSnapshot[entry.id] : null,
+        metrics: id === 'series' ? seriesMetrics?.works?.[entry.id] : entry.metrics,
+        metricRanks: primary?.metricRanks ?? {}
+      };
+      if (!primary) uniqueWorks.set(entry.id, work);
+      placed.set(entry.id, work);
+    }
+    worksByGenre.set(genre.id, placed);
+  }
+  works = [...uniqueWorks.values()];
   const date = new Date((id === 'series' ? seriesMetrics?.checkedAt : snapshot?.metricsCheckedAt ?? snapshot?.checkedAt) ?? '');
   metricDate = Number.isNaN(date.getTime()) ? ''
     : new Intl.DateTimeFormat('ko-KR', { timeZone: 'Asia/Seoul', dateStyle: 'medium' }).format(date);
@@ -363,7 +400,7 @@ function showPlatform(id) {
   renderSelectedTags();
 
   const displayed = platformGenres.filter((genre) => genre.entries.length).length;
-  const reviewed = works.filter((work) => work.research).length;
+  const reviewed = works.filter(hasDetailedReview).length;
   document.querySelector('#stat-genres').textContent = displayed + ' / ' + platformGenres.length;
   document.querySelector('#stat-ranks').textContent = works.length.toLocaleString('ko-KR');
   document.querySelector('#stat-research').textContent = reviewed.toLocaleString('ko-KR');
@@ -482,7 +519,7 @@ resultsPanel.addEventListener('click', (event) => {
   if (!row) return;
   const action = event.target.closest('a, button, input, select, textarea, summary');
   if (action && !action.classList.contains('result-title')) return;
-  const work = worksById.get(row.dataset.work);
+  const work = worksByGenre.get(row.dataset.genre)?.get(row.dataset.work);
   if (!work) return;
   row.querySelector('.result-title').focus({ preventScroll: true });
   showDetail(work);
